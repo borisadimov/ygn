@@ -1,0 +1,21 @@
+{
+  "name": "your-app",
+  "version": "0.0.1",
+  "main": "public/app.js",
+  "dependencies": {
+    "lodash": "^4.2.1",
+    "fastclick": "^1.0.6",
+    "page": "^1.6.4",
+    "bluebird": "^3.2.1",
+    "jquery": "^2.2.0",
+    "lethargy": "^1.0.4"
+  },
+  "overrides": {
+    "lodash": {
+      "main": "lodash.js"
+    },
+    "lethargy": {
+      "main": "lethargy.js"
+    }
+  }
+}
