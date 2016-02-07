@@ -4,6 +4,17 @@ lethargy = new Lethargy()
 scrollDisabled = false
 
 
+runNext = (arg1, arg2) =>
+  if typeof(arg1) is 'function'
+    return setTimeout arg1, 0
+  else
+    if typeof(arg1) is 'number' and typeof(arg2) is 'function'
+      return setTimeout arg2, arg1
+
+  console.error('wrong params for runNext')
+
+
+
 window.ready = (fn) ->
   if document.readyState != 'loading'
     do fn
@@ -23,21 +34,20 @@ createScrollListener = (elem, handler) ->
     elem.attachEvent "onmousewheel", handler
 
 
+
 nextScreen = ->
   active = $('.screen.visible')
   next = active.next()
   if !next.hasClass('screen') then return
   next.addClass 'shown'
-  setTimeout ->
+  runNext 10, ->
     active.addClass 'scrolled'
-      .on TRANSITION_END, ->
-        $(this).off TRANSITION_END
-        $(this).removeClass 'visible'
-        $(this).removeClass 'shown'
+    runNext 800, ->
+      active.removeClass 'visible'
+      active.removeClass 'shown'
 
+    next.addClass 'visible'
 
-      next.addClass 'visible'
-  , 2
 
 
 
@@ -46,21 +56,17 @@ prevScreen = ->
   active = $('.screen.visible')
   next = active.prev()
   if !next.hasClass('screen') then return
-
   next.addClass 'shown'
 
-  setTimeout ->
+  runNext 10, ->
     active.removeClass 'visible'
-      .on TRANSITION_END, ->
-        $(this).off TRANSITION_END
-        $(this).removeClass 'shown'
+    next.removeClass 'scrolled'
+    next.addClass 'visible'
+    runNext 800, ->
+      active.removeClass 'shown'
 
 
-      next.addClass 'visible'
 
-    setTimeout ->
-      next.removeClass 'scrolled'
-  , 2
 
 
 
