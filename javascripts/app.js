@@ -1,1 +1,244 @@
-!function(){"use strict";var e="undefined"==typeof window?global:window;if("function"!=typeof e.require){var n={},t={},r={},i={}.hasOwnProperty,s="components/",o=function(e,n){var t=0;n&&(0===n.indexOf(s)&&(t=s.length),n.indexOf("/",t)>0&&(n=n.substring(t,n.indexOf("/",t))));var i=r[e+"/index.js"]||r[n+"/deps/"+e+"/index.js"];return i?s+i.substring(0,i.length-".js".length):e},a=/^\.\.?(\/|$)/,u=function(e,n){for(var t,r=[],i=(a.test(n)?e+"/"+n:n).split("/"),s=0,o=i.length;o>s;s++)t=i[s],".."===t?r.pop():"."!==t&&""!==t&&r.push(t);return r.join("/")},c=function(e){return e.split("/").slice(0,-1).join("/")},d=function(n){return function(t){var r=u(c(n),t);return e.require(r,n)}},l=function(e,n){var r={id:e,exports:{}};return t[e]=r,n(r.exports,d(e),r),r.exports},v=function(e,r){var s=u(e,".");if(null==r&&(r="/"),s=o(e,r),i.call(t,s))return t[s].exports;if(i.call(n,s))return l(s,n[s]);var a=u(s,"./index");if(i.call(t,a))return t[a].exports;if(i.call(n,a))return l(a,n[a]);throw new Error('Cannot find module "'+e+'" from "'+r+'"')};v.alias=function(e,n){r[n]=e},v.register=v.define=function(e,t){if("object"==typeof e)for(var r in e)i.call(e,r)&&(n[r]=e[r]);else n[e]=t},v.list=function(){var e=[];for(var t in n)i.call(n,t)&&e.push(t);return e},v.brunch=!0,v._cache=t,e.require=v}}(),require.register("index.static",function(e,n,t){var r=function(e){var n=[];return n.push('<!DOCTYPE html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>YGN</title><meta name="viewport" content="width=device-width"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel="stylesheet" href="stylesheets/app.css"><script src="javascripts/vendor.js"></script><script src="javascripts/app.js"></script><script>require(\'init\');\n</script></head><body><div class="screen shown visible s-1">never</div><div class="screen s-2">gonna</div><div class="screen s-3">give</div><div class="screen">you</div><div class="screen">up</div></body>'),n.join("")};"function"==typeof define&&define.amd?define([],function(){return r}):"object"==typeof t&&t&&t.exports&&(t.exports=r)}),require.register("init",function(e,n,t){var r,i,s,o,a,u;r="webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd",s=new Lethargy,u=!1,window.ready=function(e){return"loading"!==document.readyState?e():document.addEventListener("DOMContentLoaded",e)},i=function(e,n){return e.addEventListener?"onwheel"in document?e.addEventListener("wheel",n):"onmousewheel"in document?e.addEventListener("mousewheel",n):e.addEventListener("MozMousePixelScroll",n):e.attachEvent("onmousewheel",n)},o=function(){var e,n;return e=$(".screen.visible"),n=e.next(),n.hasClass("screen")?(n.addClass("shown"),setTimeout(function(){return e.addClass("scrolled").on(r,function(){return $(this).off(r),$(this).removeClass("visible"),$(this).removeClass("shown")}),n.addClass("visible")},2)):void 0},a=function(){var e,n;return e=$(".screen.visible"),n=e.prev(),n.hasClass("screen")?(n.addClass("shown"),setTimeout(function(){return e.removeClass("visible").on(r,function(){return $(this).off(r),$(this).removeClass("shown")}),n.addClass("visible"),setTimeout(function(){return n.removeClass("scrolled")})},2)):void 0},ready(function(){var e,n,t;return e=document.querySelector("body"),n=0,t=function(e){var n;return e=e||window.event,n=s.check(e),n!==!1&&(u||(u=!0,1===n?a():o(),setTimeout(function(){return u=!1},1e3))),e.preventDefault?e.preventDefault():e.returnValue=!1,!1},i(e,t)})});
+(function() {
+  'use strict';
+
+  var globals = typeof window === 'undefined' ? global : window;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+  var aliases = {};
+  var has = ({}).hasOwnProperty;
+
+  var endsWith = function(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+  };
+
+  var _cmp = 'components/';
+  var unalias = function(alias, loaderPath) {
+    var start = 0;
+    if (loaderPath) {
+      if (loaderPath.indexOf(_cmp) === 0) {
+        start = _cmp.length;
+      }
+      if (loaderPath.indexOf('/', start) > 0) {
+        loaderPath = loaderPath.substring(start, loaderPath.indexOf('/', start));
+      }
+    }
+    var result = aliases[alias + '/index.js'] || aliases[loaderPath + '/deps/' + alias + '/index.js'];
+    if (result) {
+      return _cmp + result.substring(0, result.length - '.js'.length);
+    }
+    return alias;
+  };
+
+  var _reg = /^\.\.?(\/|$)/;
+  var expand = function(root, name) {
+    var results = [], part;
+    var parts = (_reg.test(name) ? root + '/' + name : name).split('/');
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function expanded(name) {
+      var absolute = expand(dirname(path), name);
+      return globals.require(absolute, path);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var module = {id: name, exports: {}};
+    cache[name] = module;
+    definition(module.exports, localRequire(name), module);
+    return module.exports;
+  };
+
+  var require = function(name, loaderPath) {
+    var path = expand(name, '.');
+    if (loaderPath == null) loaderPath = '/';
+    path = unalias(name, loaderPath);
+
+    if (has.call(cache, path)) return cache[path].exports;
+    if (has.call(modules, path)) return initModule(path, modules[path]);
+
+    var dirIndex = expand(path, './index');
+    if (has.call(cache, dirIndex)) return cache[dirIndex].exports;
+    if (has.call(modules, dirIndex)) return initModule(dirIndex, modules[dirIndex]);
+
+    throw new Error('Cannot find module "' + name + '" from '+ '"' + loaderPath + '"');
+  };
+
+  require.alias = function(from, to) {
+    aliases[to] = from;
+  };
+
+  require.register = require.define = function(bundle, fn) {
+    if (typeof bundle === 'object') {
+      for (var key in bundle) {
+        if (has.call(bundle, key)) {
+          modules[key] = bundle[key];
+        }
+      }
+    } else {
+      modules[bundle] = fn;
+    }
+  };
+
+  require.list = function() {
+    var result = [];
+    for (var item in modules) {
+      if (has.call(modules, item)) {
+        result.push(item);
+      }
+    }
+    return result;
+  };
+
+  require.brunch = true;
+  require._cache = cache;
+  globals.require = require;
+})();
+require.register("index.static", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+
+buf.push("<!DOCTYPE html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><title>YGN</title><meta name=\"viewport\" content=\"width=device-width\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no\"><link rel=\"stylesheet\" href=\"stylesheets/app.css\"><script src=\"javascripts/vendor.js\"></script><script src=\"javascripts/app.js\"></script><script>require('init');\n</script></head><body><div class=\"screen shown visible s-1\">never</div><div class=\"screen s-2\">gonna</div><div class=\"screen s-3\">give</div><div class=\"screen\">you</div><div class=\"screen\">up</div></body>");;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
+;require.register("init", function(exports, require, module) {
+var TRANSITION_END, createScrollListener, lethargy, nextScreen, prevScreen, runNext, scrollDisabled;
+
+TRANSITION_END = 'webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd';
+
+lethargy = new Lethargy();
+
+scrollDisabled = false;
+
+runNext = (function(_this) {
+  return function(arg1, arg2) {
+    if (typeof arg1 === 'function') {
+      return setTimeout(arg1, 0);
+    } else {
+      if (typeof arg1 === 'number' && typeof arg2 === 'function') {
+        return setTimeout(arg2, arg1);
+      }
+    }
+    return console.error('wrong params for runNext');
+  };
+})(this);
+
+window.ready = function(fn) {
+  if (document.readyState !== 'loading') {
+    return fn();
+  } else {
+    return document.addEventListener('DOMContentLoaded', fn);
+  }
+};
+
+createScrollListener = function(elem, handler) {
+  if (elem.addEventListener) {
+    if ('onwheel' in document) {
+      return elem.addEventListener("wheel", handler);
+    } else if ('onmousewheel' in document) {
+      return elem.addEventListener("mousewheel", handler);
+    } else {
+      return elem.addEventListener("MozMousePixelScroll", handler);
+    }
+  } else {
+    return elem.attachEvent("onmousewheel", handler);
+  }
+};
+
+nextScreen = function() {
+  var active, next;
+  active = $('.screen.visible');
+  next = active.next();
+  if (!next.hasClass('screen')) {
+    return;
+  }
+  next.addClass('shown');
+  return runNext(10, function() {
+    active.addClass('scrolled');
+    runNext(800, function() {
+      active.removeClass('visible');
+      return active.removeClass('shown');
+    });
+    return next.addClass('visible');
+  });
+};
+
+prevScreen = function() {
+  var active, next;
+  active = $('.screen.visible');
+  next = active.prev();
+  if (!next.hasClass('screen')) {
+    return;
+  }
+  next.addClass('shown');
+  return runNext(10, function() {
+    active.removeClass('visible');
+    next.removeClass('scrolled');
+    next.addClass('visible');
+    return runNext(800, function() {
+      return active.removeClass('shown');
+    });
+  });
+};
+
+ready(function() {
+  var elem, info, onWheel;
+  elem = document.querySelector('body');
+  info = 0;
+  onWheel = function(e) {
+    var scrollInfo;
+    e = e || window.event;
+    scrollInfo = lethargy.check(e);
+    if (scrollInfo !== false) {
+      if (!scrollDisabled) {
+        scrollDisabled = true;
+        if (scrollInfo === 1) {
+          prevScreen();
+        } else {
+          nextScreen();
+        }
+        setTimeout(function() {
+          return scrollDisabled = false;
+        }, 1000);
+      }
+    }
+    if (e.preventDefault) {
+      e.preventDefault();
+    } else {
+      e.returnValue = false;
+    }
+    return false;
+  };
+  return createScrollListener(elem, onWheel);
+});
+});
+
+;
+//# sourceMappingURL=app.js.map
