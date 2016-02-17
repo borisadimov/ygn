@@ -1,0 +1,200 @@
+.split
+  .left_side
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 50%
+    overflow: hidden
+
+  .right_side
+    position: absolute
+    top: 0
+    left: 50%
+    bottom: 0
+    right: 0
+    overflow: hidden
+
+
+  .scroller
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    display: flex
+    flex-flow: column nowrap
+
+    transition: transform .5s ease-in-out
+    transform: translate3d(0,0,0)
+
+    & > .scroller_section
+      width: 100%
+      flex: 0 0 50vh
+      position: relative
+
+      .content
+        background: #fff
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        padding: 5vh 15%
+        height: 100vh
+        max-height: 50vh
+        overflow: hidden
+        text-align: center
+        transition: max-height .5s ease
+        z-index: 10
+
+
+
+        .more
+          position: absolute
+          bottom: 40px
+          left: 50%
+          transform: translate3d(-50%,0,0)
+          transition: opacity .25s ease .25s
+          opacity: 0.999
+
+          +mobile
+            bottom: 20px
+          +short
+            bottom: 20px
+
+        .close
+          position: absolute
+          bottom: 45px
+          left: 50%
+          transform: translate3d(-50%,0,0)
+          cursor: pointer
+          width: 29px
+          height: 32px
+          opacity: 0.001
+          pointer-events: none
+          transition: opacity .25s ease .25s
+
+          +mobile
+            bottom: 20px
+          +short
+            bottom: 20px
+
+
+          svg
+            width: 100%
+            height: 100%
+
+
+        &.expanded
+          max-height: 100vh
+
+          .long
+            opacity: .999
+            transition-delay: .5s
+          .close
+            opacity: 0.999
+            transition-delay: .25s
+            pointer-events: auto
+
+          .more
+            opacity: 0.001 !important
+            transition-delay: 0s !important
+            pointer-events: none !important
+
+
+
+
+    .state-2 &
+      transform: translate3d(0,-50vh,0)
+
+
+
+.button
+  color: #fff
+  background: #0A3661
+  padding: 20px 90px
+  display: inline-block
+  text-transform: uppercase
+  text-align: center
+  cursor: pointer
+  transition: background-color .3s ease
+  letter-spacing: 3px
+  font-size: 16px
+  line-height: 16px
+  vertical-align: middle
+
+  &.more
+    &:before
+      content: "+"
+      display: inline-block
+      margin: 0 8px 0 0
+
+  &:hover
+    background-color: lighten(#0A3661, 15%)
+  &:active
+    background-color: lighten(#0A3661, 25%)
+
+
+
+
+.content
+  background: #fff
+  width: 100%
+  text-align: center
+  z-index: 10
+
+  .title
+    font-weight: 800
+    color: #0A3661
+    font-size: 36px
+    line-height: 36px
+    letter-spacing: 3px
+    padding: 24px
+    border-bottom: 2px solid #EF2620
+    text-align: center
+    margin-bottom: 24px
+    display: inline-block
+
+  .subtitle
+    font-size: 18px
+    color: #333333
+    letter-spacing: 1.8px
+    line-height: 28px
+
+  .text
+    font-size: 16px
+    line-height: 30px
+    color: #333333
+    letter-spacing: 1.6px
+    text-align: center
+    margin-bottom: 30px
+    p
+      margin: 0
+
+
+  .long
+    opacity: 0.001
+    pointer-events: none
+    transition: opacity .25s ease 0s
+
+
+
+
+a.absolute
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 99
+  opacity: 0
+
+
+
+
+
+
+
+
+
+
+

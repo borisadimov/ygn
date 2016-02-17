@@ -1,0 +1,81 @@
+.fifth_slide
+  background: #fff
+  width: 100%
+  height: 100%
+  width: 100vw
+  height: 100vh
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-between
+
+  .content
+    max-width: 800px
+    margin: 0 auto
+    text-align: center
+    padding: 3vh 20px 0 20px
+    flex: 1 1 664px
+    margin-bottom: 5vh
+
+    .title
+      display: inline-block
+
+    .text
+      display: inline-block
+
+  .actions
+    flex: 0 1 420px
+    display: flex
+    width: 100%
+    position: relative
+    .participate, .support
+      font-weight: 800
+      font-size: 45px
+      line-height: 51px
+      letter-spacing: 5px
+      color: #fff
+      flex: 1 0 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      overflow: hidden
+      cursor: pointer
+      .bg
+        transition: transform 1s
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 0
+      span
+        position: relative
+        z-index: 2
+        text-align: center
+      &:hover .bg
+        transition: transform 2s
+        transform: scale(1.1, 1.1)
+
+    .participate
+      .bg
+        background: url(../images/sof_vets.jpg) center center no-repeat
+        background-size: cover
+
+    .support
+      .bg
+        background: url(../images/supporters.jpg) center center no-repeat
+        background-size: cover
+
+
+
+    .or
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      position: absolute
+      font-weight: 800
+      font-size: 45px
+      line-height: 45px
+      letter-spacing: 4px
+      color: #fff
+      z-index: 1

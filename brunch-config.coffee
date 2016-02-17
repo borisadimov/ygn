@@ -22,6 +22,7 @@ exports.config =
 
     postcss:
       processors: [
+        require('postcss-will-change'),
         require('autoprefixer')(['> 1%','last 8 versions','ie 9']),
         require('postcss-pxtorem')({
           replace: false,
@@ -40,7 +41,8 @@ exports.config =
             'margin-left',
             'margin-right',
             'margin-top',
-            'margin-bottom'
+            'margin-bottom',
+            'border-bottom'
           ]
         })
       ]

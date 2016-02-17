@@ -5,7 +5,7 @@
   display: none
   top: 0
   left: 0
-  transition: transform .4s ease
+  transition: transform 600ms cubic-bezier(.23,1,.32,1) 300ms
   transform: translate3d(0,100%,0)
   &.shown
     display: block
@@ -16,15 +16,5 @@
   &.scrolled
     transform: translate3d(0,-100%,0)
 
-
-  &:nth-child(1)
-    background: #ff0000
-  &:nth-child(2)
-    background: #00ffaa
-  &:nth-child(3)
-    background: #0000ff
-  &:nth-child(4)
-    background: #00ffff
-  &:nth-child(5)
-    background: #ff00ff
-
+    &:first-child
+      transform: translate3d(0,-100%,0)

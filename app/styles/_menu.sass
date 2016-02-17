@@ -1,0 +1,326 @@
+.badge
+  position: fixed
+  z-index: 20
+  top: 30px
+  left: 30px
+  width: 55px
+  height: 76.69px
+
+  svg
+    width: 100%
+    height: 100%
+
+
+  &:not(.reversed)
+    svg
+      path
+        fill: #fff
+
+a.donate_link
+  position: fixed
+  z-index: 20
+  top: 0px
+  right: 95px
+
+  line-height: 96px
+
+  color: #fff
+  font-weight: 700
+  letter-spacing: 2px
+  color: #fff
+  cursor: pointer
+  transition: color .3s ease
+  &:hover
+    color: #EF2620
+
+  &.reversed
+    color: #EF2620
+    &:hover
+      color: #FF3630
+
+
+
+.toggle_menu
+  width: 22px
+  height: 24px
+  position: fixed
+  top: 45px - 12px
+  right: 45px
+  transform: rotate(0deg)
+  transition: transform 0.5s ease-in-out 0s, left 0.4s ease
+  cursor: pointer
+  z-index: 110
+
+  +tablet
+    top: 28px
+
+  +mobile
+    top: 24px
+
+  +short
+    top: 24px
+
+  &:hover
+    span
+      background: #EF2620
+
+  &.reversed
+    span
+      background: #EF2620
+    &:hover
+      span
+        background: #FF3630
+
+
+  span
+    display: block
+    position: absolute
+    height: 1.3px
+    width: 90%
+    background: white
+    border-radius: 9px
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)
+    transition: 0.25s ease-in-out
+    &:nth-child(1)
+      top: 5px
+    &:nth-child(2)
+      top: 17px
+    &:nth-child(3)
+      top: 11px
+      opacity: 1.0
+  &.open
+    right: 45px
+
+    span
+      &:nth-child(1)
+        top: 11px
+        background: #EF2620
+        transform: rotate(135deg)
+      &:nth-child(2)
+        top: 11px
+        background: #EF2620
+        transform: rotate(-135deg)
+      &:nth-child(3)
+        opacity: 0.0001
+
+
+.next_arrow
+  position: fixed
+  bottom: 60px
+  z-index: 30
+  left: 50%
+  transform: translateX(-50%)
+  width: 80px
+  height: 80px
+  opacity: .7
+  transition: opacity .3s ease
+  cursor: pointer
+  transition-delay: 1s
+
+
+  +mobile
+    width: 50px
+    height: 50px
+  +short
+    width: 50px
+    height: 50px
+
+
+  &.hidden
+    opacity: 0.001
+    pointer-events: none
+    transition-delay: .1s
+
+  &:hover
+    opacity: .999
+
+  svg
+    width: 100%
+    height: 100%
+
+
+.menu
+  background: #fff
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  z-index: 100
+  color: #fff
+  overflow: hidden
+  justify-content: center
+  transition: all 0.4s ease
+  display: none
+  overflow-y: scroll
+  opacity: 0.01
+
+  &.opened
+    display: flex
+  &.showed
+    opacity: .999
+
+
+
+  .left_side
+    display: flex
+    flex-flow: column nowrap
+
+    .donate, .participate, .support
+      flex: 1 0 33%
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+      font-weight: 800
+      font-size: 45px
+      line-height: 50px
+      letter-spacing: 5px
+      color: #fff
+      cursor: pointer
+      overflow: hidden
+
+      .bg
+        transition: transform 1s
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 0
+      span
+        position: relative
+        z-index: 2
+        padding: 8px 0
+        text-align: center
+        &:after
+          display: block
+          width: 100%
+          content: ""
+          background: #DBB225
+          position: absolute
+          left: 0
+          bottom: 0
+          height: 2px
+          opacity: 0.001
+          transition: opacity .3s ease
+
+      &:hover
+        .bg
+          transition: transform 2s
+          transform: scale(1.1, 1.1)
+
+        span
+          &:after
+            opacity: .999
+
+    .donate
+      .bg
+        background: url(../images/donate.jpg) center center no-repeat
+        background-size: cover
+
+    .participate
+      .bg
+        background: url(../images/sof_vets.jpg) center center no-repeat
+        background-size: cover
+
+    .support
+      .bg
+        background: url(../images/supporters.jpg) center center no-repeat
+        background-size: cover
+
+
+  .right_side
+
+    padding: 0 45px
+    display: flex
+    flex-flow: column nowrap
+    justify-content: space-between
+    .social_icons
+
+      height: 90px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 120px
+      z-index: 4
+      i
+        font-size: 20px
+        flex: 0 0
+        transition: color .3s ease
+        color: #EF2620
+        cursor: pointer
+        &:hover
+          color: lighten(#EF2620, 10%)
+
+
+
+
+    .logo
+      height: 260px
+      margin: 0px 20px 00px 20px
+      transition: all 350ms ease-in-out 750ms
+
+      +mobile
+        height: 150px
+        margin: 10px 20px 20px 20px
+      +short
+        height: 150px
+        margin: 10px 20px 20px 20px
+
+      svg
+        height: 100%
+        width: 100%
+
+
+    .links
+      text-transform: uppercase
+      display: flex
+      flex-flow: column nowrap
+      align-items: center
+      a
+        font-weight: 800
+        text-transform: uppercase
+        font-size: 30px
+        color: #333333
+        letter-spacing: 4.4px
+        line-height: 60px
+
+
+        +mobile
+          font-size: 24px
+          line-height: 45px
+        +short
+          font-size: 24px
+          line-height: 45px
+
+        &:hover, &:active
+          color: #EF2620
+
+
+    .sublinks
+      text-transform: uppercase
+      display: flex
+      flex-flow: column nowrap
+      margin-bottom: 20px
+      a
+        text-transform: uppercase
+        font-size: 16px
+        color: #333333
+        letter-spacing: 3.33px
+        line-height: 30px
+
+        +mobile
+          font-size: 15px
+          line-height: 22px
+        +short
+          font-size: 15px
+          line-height: 22px
+
+        &:hover, &:active
+          color: #EF2620
+
+

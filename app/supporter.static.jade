@@ -1,0 +1,107 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title YGN
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+
+  script(src="javascripts/vendor.js")
+
+  script(src="javascripts/app.js")
+
+  script.
+    require('init');
+
+body.supporter
+  include pages/menu
+
+  .supporter_view
+    .support_type.donor
+      .bg
+      span DONOR
+    .support_type.mentor
+      .bg
+      span MENTOR
+    .support_type.employer
+      .bg
+      span EMPLOYER
+    .support_type.partner
+      .bg
+      span CORPORATE SPONSOR
+    .support_type.transition_process
+      .bg
+      span YGN TRANSITION<br/>PROCESS
+
+
+  .overlay
+    .popup.donor
+      .close
+        include icons/close_icon.svg
+
+      .title donor
+
+
+      .text
+        p We could not do what we do without our generous donors. Every dollar counts, and your donation helps to ensure that our American heroes succeed in their next career. Your dollars make a difference, and each contribution serves as a sincere “thank you” to our brave Special Operations Forces heroes.
+        br
+        p Your tax-deductible donation will provide direct support to SOF vets with custom training, mentorship programs, and job placement. Our goal is to ensure that all transitioning Special Operations veterans have an opportunity to continue to achieve the same level of success that they experienced in the armed forces. Your generous contribution helps make sure that happens.
+
+      .buttons
+        .button.donate Donate
+        br
+        .button ATTEND EVENT
+        .button HOST EVENT
+
+
+
+    .popup.employer
+      .close
+        include icons/close_icon.svg
+
+      .title employer
+
+
+      .text
+        p Any company would be fortunate to hire a SOF vet. They embody the ideals of loyalty, passion, and discipline. These traits are hard to find in potential employees, but SOF vets have these desirable qualities in spades. While securing employment in today’s job market can be both competitive and challenging, finding the right fit in an employee for your company can be equally daunting. When leaders of industry make the smart choice by hiring SOF vets onto their teams, everybody wins.
+        br
+        p Start with a pledge to hire your first SOF vet this year, and we’ll get together with you to figure out where he will fit best and add the most value. Once you see the advantages of having this dedicated professional on your team, you’ll want to hire more. Let’s connect. The better we understand your business, the more helpful we’ll be in finding the best candidates for your organization.
+
+
+      .button Apply
+
+
+
+
+
+    .popup.mentor
+      .close
+        include icons/close_icon.svg
+
+      .title mentor
+
+
+      .text
+        p Mentors can make a difference. If you have valuable insight and experience in the corporate world, spending time mentoring a SOF vet can have a huge impact on their transition trajectory. Your knowledge, expertise, and unique perspective can be of tremendous value to SOF vets. Just bring your experience to the table so they can learn from you. You’ve been there, you excel at it, and you can be their mentor.
+        br
+        p Once you are matched with a protégé, you’ll meet monthly (in person, through email, or over Skype). One-on-one relationships are the key to our veterans’ success and YGN is committed to building partnership between industry leaders and our Special Operations veterans. Contact us to start the process on becoming a mentor.
+
+      .button Apply
+
+
+
+    .popup.partner
+      .close
+        include icons/close_icon.svg
+
+      .title corporate partner
+
+
+      .text
+        p Mentors can make a difference. If you have valuable insight and experience in the corporate world, spending time mentoring a SOF vet can have a huge impact on their transition trajectory. Your knowledge, expertise, and unique perspective can be of tremendous value to SOF vets. Just bring your experience to the table so they can learn from you. You’ve been there, you excel at it, and you can be their mentor.
+        br
+        p Once you are matched with a protégé, you’ll meet monthly (in person, through email, or over Skype). One-on-one relationships are the key to our veterans’ success and YGN is committed to building partnership between industry leaders and our Special Operations veterans. Contact us to start the process on becoming a mentor.
+
+      .button Apply
+
+

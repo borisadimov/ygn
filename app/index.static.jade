@@ -13,21 +13,26 @@ head
   script.
     require('init');
 
-body
-  .screen.shown.visible.s-1
-    | never
+body.index
 
-  .screen.s-2
-    | gonna
+  include pages/menu
 
-  .screen.s-3
-    | give
+  .next_arrow
+    include icons/arrow.svg
 
-  .screen
-    | you
+
+  .screen.shown.visible
+    include pages/screen_main
 
   .screen
-    | up
+    include pages/screen_second
 
+  .screen
+    include pages/screen_third
 
+  .screen
+    include pages/screen_fourth
+
+  .screen
+    include pages/screen_fifth
 
