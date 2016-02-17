@@ -1,5 +1,5 @@
 require 'scripts/utils'
-window.screens = new (require('scripts/screens'))
+
 
 
 isMenuOpened = false
@@ -36,7 +36,7 @@ toggleMenu = ->
 
 ready ->
 
-  screens.init()
+
 
   runNext 100, ->
     $('.main_slide .logo, .main_slide .subtitle').addClass('appeared')
@@ -44,7 +44,24 @@ ready ->
 
   $('.toggle_menu').click toggleMenu
 
+  if $('body').hasClass('index')
+    window.screens = new (require('scripts/screens'))
+    screens.init()
 
-  supporter = new (require('scripts/supporter'))
+  if $('body').hasClass('supporter')
+    window.supporter = new (require('scripts/supporter'))
+
+
+  if $('body').hasClass('challenge')
+    window.challenge = new (require('scripts/challenge'))
+    challenge.init()
+
+
+
+
+
+
+
+
 
 
