@@ -37,7 +37,7 @@ toggleMenu = ->
 ready ->
 
   if window.location.hostname.indexOf('github') > -1
-    $('head').prepend('<base href="http://flywithmemsl.github.io/ygn" />')
+    $('head').prepend('<base href="http://flywithmemsl.github.io/ygn/" />')
 
   runNext 100, ->
     $('.main_slide .logo, .main_slide .subtitle').addClass('appeared')
