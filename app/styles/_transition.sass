@@ -186,75 +186,7 @@
           &:after
             display: none
 
-      .steps
-        flex: 1 1 270px
-        display: flex
-        width: 100%
-        height: 140px
-        flex-flow: row nowrap
-        align-items: stretch
-        overflow: hidden
-        .step
-          flex: 3 0
-          display: flex
-          flex-flow: column nowrap
-          justify-content: center
-          align-items: flex-start
-          padding-left: 5vw
-          position: relative
-          color: #fefefe
-          &:after
-            content: "+"
-            display: block
-            position: absolute
-            top: 50%
-            left: 100%
-            font-weight: 800
-            letter-spacing: 3px
-            z-index: 9
-            transform: translate3d(-50%,-50%,0)
-            font-size: 60px
-            color: #FEFEFE
-            line-height: 60px
-            text-shadow: 0px 10px 38px rgba(0,0,0,0.30)
 
-          .number
-            font-weight: 800
-            font-size: 18px
-            color: #FEFEFE
-            line-height: 26px
-            margin-bottom: 8px
-          .name
-            font-weight: 800
-            font-size: 26px
-            color: #FEFEFE
-            letter-spacing: 3px
-            line-height: 36px
-
-
-
-
-        .step_1
-          background: #253757
-        .step_2
-          background: #DBB225
-        .step_3
-          background: #3C3D3C
-          &:after
-            content: "="
-        .step_4
-          flex: 5 0
-          background: #A1252B
-          padding: 0
-          align-items: center
-          &:after
-            display: none
-          .number
-            font-size: 26px
-            margin-bottom: 16px
-          .name
-            font-size: 38px
-            text-align: center
 
 
       .content
@@ -276,8 +208,14 @@
             right: 0
             bottom: 0
             display: flex
+            flex-flow: column nowrap
+            align-items: stretch
+          .info
+            display: flex
             flex-flow: row nowrap
             align-items: stretch
+            flex: 2 1 450px
+
 
           .phase_title
             display: flex
@@ -316,6 +254,78 @@
                 width: 100%
                 height: 100%
 
+          .steps
+            flex: 1 1 270px
+            display: flex
+            width: 100%
+            height: 140px
+            flex-flow: row nowrap
+            align-items: stretch
+            overflow: hidden
+            .step
+              flex: 3 0
+              display: flex
+              flex-flow: column nowrap
+              justify-content: center
+              align-items: flex-start
+              padding-left: 2.5vw
+              position: relative
+              color: #fefefe
+              &:after
+                content: "+"
+                display: block
+                position: absolute
+                top: 50%
+                left: 100%
+                font-weight: 800
+                letter-spacing: 3px
+                z-index: 9
+                transform: translate3d(-50%,-50%,0)
+                font-size: 60px
+                color: #FEFEFE
+                line-height: 60px
+                text-shadow: 0px 10px 38px rgba(0,0,0,0.30)
+
+              .number
+                font-weight: 800
+                font-size: 18px
+                color: #FEFEFE
+                line-height: 26px
+                margin-bottom: 8px
+              .name
+                font-weight: 800
+                font-size: 24px
+                color: #FEFEFE
+                letter-spacing: 3px
+                line-height: 36px
+                text-align: left
+
+
+
+
+            .step_1
+              background: #253757
+            .step_2
+              background: #DBB225
+            .step_2_2
+              background: #BFAD70
+            .step_3
+              background: #3C3D3C
+              &:after
+                content: "="
+            .step_4
+              flex: 5 0
+              background: #A1252B
+              padding: 0
+              align-items: center
+              &:after
+                display: none
+              .number
+                font-size: 26px
+                margin-bottom: 16px
+              .name
+                font-size: 38px
+                text-align: center
 
     &.state-1
       .next_arrow
