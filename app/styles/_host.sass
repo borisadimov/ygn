@@ -1,5 +1,7 @@
 .host
   .host_view
+    display: flex
+    flex-flow: row nowrap
 
     .left_side
       position: relative
@@ -50,13 +52,94 @@
 
 
     .right_side
+      background: #fff
+      height: 100%
+      height: 100vh
+      width: 50%
+
+      position: relative
+      display: flex
+      flex-flow: column nowrap
+      align-items: center
+      justify-content: center
+
       .content
-        display: flex
-        flex-flow: column nowrap
-        position: relative
+        text-align: left
+        width: 80%
+        height: 50%
+        height: 50vh
+        padding: 30px 0
 
         .title
           font-size: 36px
           color: #3C3D3C
           letter-spacing: 4.81px
           line-height: 43px
+          border-bottom: 2px #A1252B solid
+          font-weight: 800
+          padding-bottom: 5px
+          text-transform: uppercase
+
+        .text
+          font-size: 20px
+          color: #3C3D3C
+          text-align: left
+          letter-spacing: 2.5px
+          line-height: 26px
+          margin-bottom: 25px
+
+      .star_events
+        display: flex
+        height: 50%
+        height: 50vh
+        width: 100%
+        flex-flow: column nowrap
+        position: relative
+        z-index: 10
+
+        .event
+          height: 20%
+          width: 100%
+          font-weight: 800
+          color: #fff
+          padding: 0 55px
+
+          display: flex
+          flex-flow: row nowrap
+          align-items: center
+          justify-content: flex-start
+
+        .toggleIcon,
+        .name
+          font-size: 30px
+          color: #FEFEFE
+          letter-spacing: 4.01px
+          line-height: 35px
+
+        .toggleIcon
+          flex: 0 0 5%
+
+        .name
+          flex: 0 0 45%
+          margin-right: 5%
+
+        .stars
+          flex: 1 0 45%
+
+          svg
+            margin-right: 8px
+
+        .one-star
+          background: #3C3D3C
+
+        .two-star
+          background: #B4B4B4
+
+        .three-star
+          background: #A1252B
+
+        .four-star
+          background: #253757
+
+        .five-star
+          background: #DBB225

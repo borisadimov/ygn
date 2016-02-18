@@ -62,7 +62,7 @@ ready ->
       $('.phases .phase_1').addClass('active')
 
 
-  if $('body').hasClass('contact') || $('body').hasClass('directors') || $('body').hasClass('blog') || $('body').hasClass('sponsors')
+  if $('body').hasClass('contact') || $('body').hasClass('directors') || $('body').hasClass('blog') || $('body').hasClass('sponsors') || $('body').hasClass('host')
     $('.donate_link').addClass('reversed')
     $('.toggle_menu').addClass('reversed')
 
