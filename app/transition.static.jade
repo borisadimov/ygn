@@ -88,31 +88,96 @@ body.transition
 
     .phases_block
       .phases
-        .phase.phase_1
+        .phase.phase_1(data-index='1')
           .number PHASE 1:
           .name ASSESS
-        .phase.phase_2
+        .phase.phase_2(data-index='2')
           .number PHASE 2:
           .name EXPLORE
-        .phase.phase_3
+        .phase.phase_3(data-index='3')
           .number PHASE 3:
-          .name EXPLORE
-        .phase.phase_4
+          .name PREPARE
+        .phase.phase_4(data-index='4')
           .number PHASE 4:
           .name EXECUTE
 
       .content
+
         .phase_content.phase_1
-          .phase_title
-            .word PHASE
-            .number 1
-          .phase_text
-            .title ASSESS
-            .text
-              p First, let us get to know you. Record your personal information as well as your interests and skills including, but not limited to, your education, military, and personal background.  You will also evaluate your hard and soft skill sets introspectively, and will complete a DISC assessment to better inform career matches based on your personality.  The Assess step concludes with a compiled Candidate Profile that will assist the candidate as well as YGN handlers and mentors. The Assess step concludes with a compiled Candidate Profile that will assist the candidate as well as YGN handlers and mentors and other such.
-          .right_arrow
-            .arrow
-              include icons/right-arrow.svg
+          .wrapper
+            .phase_title
+              .word PHASE
+              .number 1
+            .phase_text
+              .title ASSESS
+              .text
+                p First, let us get to know you. Record your personal information as well as your interests and skills including, but not limited to, your education, military, and personal background.  You will also evaluate your hard and soft skill sets introspectively, and will complete a DISC assessment to better inform career matches based on your personality.  The Assess step concludes with a compiled Candidate Profile that will assist the candidate as well as YGN handlers and mentors. The Assess step concludes with a compiled Candidate Profile that will assist the candidate as well as YGN handlers and mentors and other such.
+            .right_arrow
+              .arrow
+                include icons/right-arrow.svg
+
+        .phase_content.phase_2
+          .wrapper
+            .phase_title
+              .word PHASE
+              .number 2
+            .phase_text
+              .title EXPLORE
+              .text
+                p
+                  | Once we’ve gotten to know you better, we’ll use this information to focus on the
+                  | opportunities that will be a good fit for you. We’ll work to determine the best
+                  | companies -and the roles for you within those companies- that are a good match
+                  | for your education, interests, and transferrable military experience. During this
+                  | phase you’ll also be researching the companies that you might join to better
+                  | understand their culture, because succeeding in your next position depends on
+                  | more than the job description you’ll fulfill.
+            .right_arrow
+              .arrow
+                include icons/right-arrow.svg
+
+        .phase_content.phase_3
+          .wrapper
+            .phase_title
+              .word PHASE
+              .number 3
+            .phase_text
+              .title PREPARE
+              .text
+                p
+                  | As you’ve done throughout your career, preparation is critical.  Because your
+                  | transition pathway is unique to you, we commit to preparing you, individually, to
+                  | pursue your target opportunities.  At this point in the process, YGN pairs you with
+                  | a mentor who has specific experience and proficiency in one of the industries
+                  | we’ve determined you are best suited for. You and your mentor will develop an
+                  | actionable plan to pursue your target opportunities, secure a position with a great
+                  | company, and succeed on your new team.
+            .right_arrow
+              .arrow
+                include icons/right-arrow.svg
+
+
+        .phase_content.phase_4
+          .wrapper
+            .phase_title
+              .word PHASE
+              .number 4
+            .phase_text
+              .title EXECUTE
+              .text
+                p
+                  | Committing to the process sets you up to execute on your action plan. With a
+                  | completed Candidate Profile, YGN can best match you with the right companies.
+                  | You’ll have addressed any challenges in meeting criteria for desired positions,
+                  | and be prepared to secure an offer.   As you execute on your plan, YGN and
+                  | your mentor help you through the daunting steps of getting interviews and follow
+                  | up with corporate partners to be sure they understand why you’re the right
+                  | candidate.  The process continues after you’ve landed the job, with ongoing
+                  | check-ins with your mentor, who will continue to be a great resource in your
+                  | career.
+
+            .right_arrow
+
 
 
       .steps
