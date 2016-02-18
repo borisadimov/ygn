@@ -68,5 +68,6 @@ ready ->
     $('.donate_link').addClass('reversed')
     $('.toggle_menu').addClass('reversed')
 
-  if $('body').hasClass('blog')
+
+  if $('body').hasClass('press') || $('body').hasClass('blog')
     $('.badge').addClass('reversed')
