@@ -57,16 +57,6 @@ ready ->
     challenge.init()
 
 
-  if $('body').hasClass('contact') || $('body').hasClass('directors')
+  if $('body').hasClass('contact') || $('body').hasClass('directors') || $('body').hasClass('sponsors')
     $('.donate_link').addClass('reversed')
     $('.toggle_menu').addClass('reversed')
-
-
-
-
-
-
-
-
-
-
