@@ -38,13 +38,16 @@ a.donate_link
     &:hover
       color: #FF3630
 
+  body:not(.index) &
+    line-height: 60px
+
 
 
 .toggle_menu
   width: 22px
   height: 24px
   position: fixed
-  top: 45px - 12px
+  top: 33px
   right: 45px
   transform: rotate(0deg)
   transition: transform 0.5s ease-in-out 0s, left 0.4s ease
@@ -59,6 +62,10 @@ a.donate_link
 
   +short
     top: 24px
+
+  body:not(.index) &
+    top: 19px
+
 
   &:hover
     span

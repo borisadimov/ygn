@@ -121,9 +121,11 @@ module.exports = class Challenge
     if index is 0
       toggleMenu.addClass('reversed')
       donateLink.addClass('reversed')
+      $('.content .social_icons').addClass('reversed')
     else
       toggleMenu.removeClass('reversed')
       donateLink.removeClass('reversed')
+      $('.content .social_icons').removeClass('reversed')
 
 
   setHandlers: =>

@@ -141,6 +141,32 @@
   width: 100%
   text-align: center
   z-index: 10
+  position: relative
+  .social_icons
+    position: absolute
+    top: 20px
+    left: 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 120px
+    z-index: 99
+
+    i
+      font-size: 20px
+      flex: 0 0
+      transition: color .3s ease
+      color: #fff
+      cursor: pointer
+      &:hover
+        color: #DBB225
+
+    &.reversed i
+      color: #A1252B
+      &:hover
+        color: #DBB225
+
+
 
   .title
     font-weight: 800
@@ -148,8 +174,8 @@
     font-size: 36px
     line-height: 36px
     letter-spacing: 3px
-    padding: 24px
-    border-bottom: 2px solid #EF2620
+    padding: 10px 4px
+    border-bottom: 2.5px solid #EF2620
     text-align: center
     margin-bottom: 24px
     display: inline-block
@@ -190,6 +216,27 @@ a.absolute
 
 
 
+.form
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+
+
+
+  input, textarea
+    background: #FEFEFE
+    font-size: 18px
+    font-size: 18px
+    padding: 18px 20px
+    border: none
+
+    flex: 2 0 100%
+    margin-bottom: 24px
+
+    resize: none
+
+    &.half_width
+      flex: 0 1 47%
 
 
 

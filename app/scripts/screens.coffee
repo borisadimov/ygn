@@ -12,15 +12,15 @@ module.exports = class Screens
   badge = null
   index: null
 
-  length = 5
+  length = 4
 
   states =
     '0': []
     '1': ['state-1','state-2']
-    '2': []
-    '3': ['state-1']
+    # '2': []
+    '2': ['state-1']
+    '3': []
     '4': []
-    '5': []
 
   currentState = null
   started = false

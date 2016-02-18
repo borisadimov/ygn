@@ -1,0 +1,68 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title YGN
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+
+  script(src="javascripts/vendor.js")
+
+  script(src="javascripts/app.js")
+
+  script.
+    require('init');
+
+body.contact
+
+  include pages/menu
+
+
+
+  .contact_view.split
+    .left_side
+      .bg_1
+
+      .wrapper
+        .form_name GET IN TOUCH
+        .form
+          input.half_width(type='text' name='first_name' placeholder='FIRST NAME')
+          input.half_width(type='text' name='last_name' placeholder='LAST NAME')
+          input(type='text' name='email' placeholder='EMAIL ADRESS')
+          textarea(name='message' placeholder='YOUR MESSAGE HERE' rows="9")
+
+
+        .button SUBMIT
+
+
+
+    .right_side
+      .content
+        .title Contact
+
+        .text
+          p
+            b.name YOUR GRATEFUL NATION
+          p 123 Main St. <br/> Atlanta, GA 49205
+          p
+            b 703.945.8864
+
+        .follow
+          span FOLLOW
+          .social_icons.reversed
+            i.icon-facebook
+            i.icon-twitter
+            i.icon-linkedin
+
+        .ein
+          p
+            b Your Grateful Nation
+            = " "
+            | is a 501(c)(3) non-profit organization.
+          p
+            b EIN:
+            = " "
+            | 46-2657728
+
+
+
