@@ -16,6 +16,9 @@ exports.config =
     jade:
       pretty: no # Adds pretty-indentation whitespaces to output (false by default)
 
+      locals:
+        github: false
+
     static_jade:                        # all optionals
       extension:  ".static.jade"        # static-compile each file with this extension in `assets`
       asset:      "app/assets"     # specify the compilation output
