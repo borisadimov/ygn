@@ -233,11 +233,11 @@ module.exports = class Screens
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
-      when '3,0'
+      when '2,0'
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.addClass('reversed')
-      when '4,'
+      when '3,'
         donateLink.addClass('reversed')
         toggleMenu.addClass('reversed')
         badge.addClass('reversed')
