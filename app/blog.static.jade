@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title YGN
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+
+  script(src="javascripts/vendor.js")
+
+  script(src="javascripts/app.js")
+
+  script.
+    require('init');
+
+body.blog
+
+  include pages/menu
+  
+  .blog_view
+    .blog_navigation
+      .navigation-list
+        .title
+          | BLOG
+          
+        .navigation-item.navigation-itemActive
+          a(href='#') ALL
+        .navigation-item
+          a(href='#') ARTICLES
+        .navigation-item
+          a(href='#') SOF VETS
+        .navigation-item
+          a(href='#') PODCASTS
+        .navigation-item
+          a(href='#') TESTIMONIALS
+  
+    .blog_posts
+      .post.greatCities
+        .bg
+        .text
+          .post_date
+            | FEBRUARY 07
+          .post_title
+            | YGN WELCOMES NEW CHIEF DEVELOPMENT OFFICER
+          .post_text
+            | Your Grateful Nation, a military nonprofit dedicated to the successful transition of Americas Special Operations veterans into private sector, announced today that Stacey Crooks, has joined the organization as its chief development officer. 
+        
+      .post.jobsSof.post_titleActive
+        .bg
+        .text
+          .post_date
+            | FEBRUARY 07
+          .post_title
+            | YGN WELCOMES NEW CHIEF DEVELOPMENT OFFICER
+          .post_text
+            | Your Grateful Nation, a military nonprofit dedicated to the successful transition of Americas Special Operations veterans into private sector, announced today that Stacey Crooks, has joined the organization as its chief development officer.
+    
+    .blog_openedPost
+      include posts/jobsSof
