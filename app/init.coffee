@@ -29,11 +29,6 @@ toggleMenu = ->
 
 
 
-
-
-
-
-
 ready ->
 
   if window.location.hostname.indexOf('github') > -1

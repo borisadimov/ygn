@@ -1,0 +1,218 @@
+.host
+  .host_view
+
+    .left_side
+      position: relative
+      width: 50%
+      height: 100%
+      height: 100vh
+
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+
+      .bg
+        background: url(../images/host.jpg) center 10% no-repeat
+        background-size: cover
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 2
+        -webkit-backface-visibility: hidden
+
+      .description
+        position: relative
+        z-index: 3
+        color: #fff
+        width: 80%
+
+        .title
+          font-size: 40px
+          color: #FEFEFE
+          letter-spacing: 5.35px
+          line-height: 47px
+          font-weight: 800
+
+        .text,
+        .text_italic
+          font-size: 20px
+          color: #FEFEFE
+          letter-spacing: 2.5px
+          line-height: 26px
+          margin-top: 15px
+
+        .text_italic
+          font-style: italic
+          margin-top: 30px
+
+
+    .right_side
+      .content
+        display: flex
+        flex-flow: column nowrap
+        justify-content: flex-start
+        align-items: stretch
+        position: relative
+
+      .part
+        flex: 1 1 50vh
+        text-align: left
+        display: flex
+        flex-flow: column nowrap
+        padding: 0px 60px
+
+        .title
+          text-align: left
+          display: inline-block
+          max-width: 238px
+          border-color: #A1252B
+
+        .text
+          margin: 0
+          p
+            font-size: 16px
+            color: #000000
+            letter-spacing: 1px
+            line-height: 23px
+            opacity: 0.001
+            transition: opacity .3s ease .2s
+            will-change: opacity
+
+      .points
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+
+        .point
+          position: absolute
+          left: 0
+          width: 100%
+          height: 10%
+          height: calc(10vh + 1px)
+          z-index: 20
+          transition: transform .4s ease
+          will-change: transform
+          transform: translate3d(0,0,0)
+          display: flex
+          align-items: center
+          justify-content: center
+          font-size: 36px
+          color: #FEFEFE
+          letter-spacing: 5px
+          line-height: 60px
+          font-weight: 800
+          cursor: pointer
+
+          &.oneStar
+            top: 10%
+            top: 10vh
+            background: url(../images/issue.jpg) center center no-repeat
+            background-size: cover
+
+          &.twoStar
+            top: 20%
+            top: 20vh
+            background: url(../images/opportunity.jpg) center center no-repeat
+            background-size: cover
+
+          &.threeStar
+            top: 30%
+            top: 30vh
+            background: url(../images/solution.jpg) center center no-repeat
+            background-size: cover
+
+          &.fourStar
+            top: 40%
+            top: 40vh
+            background: url(../images/issue.jpg) center center no-repeat
+            background-size: cover
+
+          &.fiveStar
+            top: 50%
+            top: 50vh
+            background: url(../images/opportunity.jpg) center center no-repeat
+            background-size: cover
+
+
+
+          &.scrolled
+            transform: translate3d(0,-100%,0)
+
+    &.state-1
+      .left_side
+        .bg_2
+          opacity: .999
+
+      .right_side
+        .text.issue p
+          opacity: .999
+
+        .points .point.issue
+          transform: translate3d(0,-100%,0)
+          pointer-events: none
+          text-decoration: underline
+
+
+
+    &.state-2
+      .left_side
+        .bg_3
+          opacity: .999
+
+      .right_side
+
+        .points .point.issue
+          transform: translate3d(0,-100%,0)
+
+        .text.opportunity p
+          opacity: .999
+
+        .points .point.opportunity
+          transform: translate3d(0,-100%,0)
+          pointer-events: none
+          text-decoration: underline
+
+
+    &.state-3
+      .left_side
+        .bg_4
+          opacity: .999
+
+      .right_side
+        .points .point.issue
+          transform: translate3d(0,-100%,0)
+
+        .points .point.opportunity
+          transform: translate3d(0,-100%,0)
+
+        .text.solution p
+          opacity: .999
+
+        .points .point.solution
+          transform: translate3d(0,-100%,0)
+          pointer-events: none
+          text-decoration: underline
+
+    &.state-4
+      .left_side
+        .bg_4
+          opacity: .999
+
+      .right_side
+        .points .point.issue
+          transform: translate3d(0,-100%,0)
+
+        .points .point.opportunity
+          transform: translate3d(0,-100%,0)
+
+
+        .points .point.solution
+          transform: translate3d(0,-100%,0)
+          pointer-events: none
+          text-decoration: underline
+      .actions
+        transform: translate3d(0,0,0)
