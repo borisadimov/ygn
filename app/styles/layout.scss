@@ -12,6 +12,7 @@
 
 @import '_supporter';
 @import '_challenge';
+@import '_events';
 
 
 
@@ -24,7 +25,7 @@ html{
 }
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: 'San Francisco Display', 'Helvetica Neue', serif;
+    font-family: 'SFNS Display', 'Helvetica Neue', serif;
     background: #000;
     -webkit-backface-visibility: hidden;
 }
@@ -75,4 +76,3 @@ p {
 a {
     outline: none;
 }
-

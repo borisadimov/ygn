@@ -1,0 +1,158 @@
+.events
+
+  .events_title
+    height: 46%
+    height: 46vh
+    color: #fff
+    padding: 0 50px
+    text-align: center
+    width: 100%
+
+    background: url(../images/events.jpg) center center no-repeat
+    background-size: cover
+
+    .title
+      font-size: 54px
+      color: #FEFEFE
+      letter-spacing: 7.22px
+      line-height: 63px
+      font-weight: 800
+      padding: 8vh 0 3vh 0
+
+    .text
+      font-size: 20px
+      text-align: left
+      color: #FEFEFE
+      letter-spacing: 2.59px
+      max-width: 860px
+      margin: 0 auto
+      line-height: 36px
+
+
+      & > span
+        font-weight: 800
+        font-size: 26px
+
+  .events_container
+    display: flex
+    flex-flow: row wrap
+    height: 54%
+    height: 54vh
+
+    .events_view
+      height: 100%
+      flex: 0 0 66.66%
+
+      display: flex
+      flex-flow: row wrap
+      align-items: stretch
+
+      .events_town
+        flex: 0 0 50%
+
+        font-size: 36px
+        line-height: 36px
+        letter-spacing: 4px
+        color: #fff
+        cursor: pointer
+        overflow: hidden
+
+        .date
+          z-index: 2
+          font-size: 15px
+          line-height: 17px
+
+    .events_yourCity
+      height: 100%
+      flex: 0 0 33.33%
+
+      span
+        font-size: 20px
+        color: #FEFEFE
+        letter-spacing: 2.67px
+        line-height: 23px
+        z-index: 2
+
+      .button
+        margin-top: 20px
+        font-size: 22px
+        padding-left: 39px
+        font-weight: 400
+        z-index: 2
+        padding-right: 39px
+
+    .events_yourCity,
+    .events_town
+      position: relative
+      cursor: pointer
+      overflow: hidden
+
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+
+      font-weight: 800
+
+
+      .bg
+        will-change: transform
+        transition: transform 1s
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 0
+
+      .town
+        position: relative
+        z-index: 2
+        font-size: 32px
+        text-align: center
+        padding: 8px 0
+        &:after
+          display: block
+          width: 100%
+          content: ""
+          background: #DBB225
+          position: absolute
+          left: 0
+          bottom: 0
+          height: 2px
+          opacity: 0.001
+          transition: opacity .3s ease
+
+      &:hover
+        .bg
+          transition: transform 2s
+          transform: scale(1.1, 1.1)
+
+        .town
+          &:after
+            opacity: .999
+
+
+    .yourCity.bg
+      background: url(../images/yourcity.jpg) center center no-repeat
+      background-size: cover
+
+    .atlanta
+      .bg
+        background: url(../images/atlanta.jpg) center center no-repeat
+        background-size: cover
+
+    .boston
+      .bg
+        background: url(../images/boston.jpg) center center no-repeat
+        background-size: cover
+
+    .boston
+      .bg
+        background: url(../images/boston.jpg) center center no-repeat
+        background-size: cover
+
+    .newyork
+      .bg
+        background: url(../images/newyork.jpg) center center no-repeat
+        background-size: cover
