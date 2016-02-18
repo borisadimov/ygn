@@ -39,6 +39,9 @@ ready ->
   if window.location.hostname.indexOf('github') > -1
     $('head').prepend('<base href="http://flywithmemsl.github.io/ygn/" />')
 
+  if window.location.hostname.indexOf('citytocoast') > -1
+    $('head').prepend('<base href="http://citytocoast.com/ygn/" />')
+
   runNext 100, ->
     $('.main_slide .logo, .main_slide .subtitle').addClass('appeared')
 
@@ -64,7 +67,7 @@ ready ->
       $('.phases .phase_1').addClass('active')
 
 
-  if $('body').hasClass('contact') || $('body').hasClass('directors') || $('body').hasClass('blog')
+  if $('body').hasClass('contact') || $('body').hasClass('directors') || $('body').hasClass('blog') || $('body').hasClass('sponsors')
     $('.donate_link').addClass('reversed')
     $('.toggle_menu').addClass('reversed')
 
