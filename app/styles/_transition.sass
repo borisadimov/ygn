@@ -125,6 +125,7 @@
           justify-content: center
           align-items: flex-start
           padding-left: 5vw
+          cursor: pointer
           position: relative
           &:after
             content: ""
@@ -175,6 +176,9 @@
 
         .phase.active
           background: #FEFEFE
+          z-index: 25
+
+
           .number
             color: #A1252B
           .name
@@ -263,9 +267,18 @@
           left: 0
           right: 0
           bottom: 0
-          display: flex
-          flex-flow: row nowrap
-          align-items: stretch
+          display: none
+
+          .wrapper
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            display: flex
+            flex-flow: row nowrap
+            align-items: stretch
+
           .phase_title
             display: flex
             flex-flow: column nowrap
