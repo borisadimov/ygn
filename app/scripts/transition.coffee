@@ -101,6 +101,10 @@ module.exports = class Transition
 
   setPhase: (index) =>
     unless @scrollDisabled
+      if currentState is 0
+        transition_view.removeClass(states.join(' '))
+        transition_view.addClass(states[1])
+
       @scrollDisabled = true
       $('.phases .phase').removeClass('active')
       $('.phase_content').hide()
@@ -116,10 +120,11 @@ module.exports = class Transition
   setState: (index) =>
     transition_view.removeClass(states.join(' '))
     transition_view.addClass(states[index])
-    $('.phases .phase_1').addClass('active')
-    $('.phase_content.phase_1').fadeIn('300')
+    if phase is 0
+      $('.phases .phase_1').addClass('active')
+      $('.phase_content.phase_1').fadeIn('300')
 
-    phase = 1
+      phase = 1
 
 
   setHandlers: =>
