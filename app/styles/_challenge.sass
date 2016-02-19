@@ -144,6 +144,7 @@
         color: #fff
         flex: 1 0 50%
         display: flex
+        flex-flow: column nowrap
         justify-content: center
         align-items: center
         position: relative
@@ -157,10 +158,26 @@
           right: 0
           bottom: 0
           z-index: 0
-        span
+        .title
           position: relative
           z-index: 2
           text-align: center
+          height: 102px
+          vertical-align: middle
+          display: flex
+          justify-content: center
+          align-items: center
+        .subtitle
+          position: relative
+          z-index: 2
+          text-align: center
+          font-weight: 400
+          font-size: 15px
+          line-height: 18px
+          letter-spacing: 1.5px
+          margin-top: 20px
+
+
         &:hover .bg
           transition: transform 2s
           transform: scale(1.1, 1.1)

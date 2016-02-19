@@ -79,6 +79,7 @@ ready ->
 
   $('.star_events .event').click ->
     if !$(this).hasClass('opened')
+      $('.star_events .event.opened').removeClass('opened').next().slideUp()
       $(this).addClass('opened')
       $(this).find('.toggleIcon').html('-')
       $(this).next().slideDown()
