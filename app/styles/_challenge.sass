@@ -8,10 +8,10 @@
         position: absolute
         top: 0
         left: 0
-        right: 0
         bottom: 0
-        z-index: 2
+        right: 0
         -webkit-backface-visibility: hidden
+
 
       .bg_2
         background: url(../images/who_we_are_2.jpg) center 10% no-repeat
@@ -19,25 +19,31 @@
         position: absolute
         top: 0
         left: 0
-        right: 0
         bottom: 0
-        opacity: 0.001
-        z-index: 3
+        right: 0
         transition: opacity .5s ease
         -webkit-backface-visibility: hidden
+        transition: transform .4s ease
+        transform: translate3d(0,0,0)
 
-      .bg_3
-        background: url(../images/what_we_do.jpg) center center no-repeat
-        background-size: cover
+
+      .bg_wrapper_1, .bg_wrapper_2
         position: absolute
-        top: 0
         left: 0
-        right: 0
+        width: 100%
+        height: 100%
+        transition: transform .4s ease
+        transform: translate3d(0,0,0)
+        overflow: hidden
+
+      .bg_wrapper_1
+        top: 0
+        z-index: 2
+
+      .bg_wrapper_2
         bottom: 0
-        opacity: 0.001
-        z-index: 4
-        transition: opacity .5s ease
-        -webkit-backface-visibility: hidden
+        z-index: 3
+        max-height: 100vh
 
 
 
@@ -188,8 +194,10 @@
 
     &.state-1
       .left_side
+        .bg_wrapper_2
+          transform: translate3d(0,25vh,0)
         .bg_2
-          opacity: .999
+          transform: translate3d(0,-25vh,0)
 
       .right_side
         .text.issue p
@@ -204,8 +212,10 @@
 
     &.state-2
       .left_side
-        .bg_3
-          opacity: .999
+        .bg_wrapper_2
+          transform: translate3d(0,50vh,0)
+        .bg_2
+          transform: translate3d(0,-50vh,0)
 
       .right_side
 
@@ -223,9 +233,10 @@
 
     &.state-3
       .left_side
-        .bg_4
-          opacity: .999
-
+        .bg_wrapper_2
+          transform: translate3d(0,75vh,0)
+        .bg_2
+          transform: translate3d(0,-75vh,0)
       .right_side
         .points .point.issue
           transform: translate3d(0,-100%,0)
@@ -243,9 +254,10 @@
 
     &.state-4
       .left_side
-        .bg_4
-          opacity: .999
-
+        .bg_wrapper_2
+          transform: translate3d(0,100vh,0)
+        .bg_2
+          transform: translate3d(0,-100vh,0)
       .right_side
         .points .point.issue
           transform: translate3d(0,-100%,0)
