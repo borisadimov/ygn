@@ -27,6 +27,7 @@ exports.config =
       processors: [
         require('postcss-will-change'),
         require('autoprefixer')(['> 1%','last 8 versions','ie 9']),
+        require('postcss-flexbugs-fixes'),
         require('postcss-pxtorem')({
           replace: false,
           selectorBlackList: ['body', 'html'],
