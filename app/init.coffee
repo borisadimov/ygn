@@ -72,3 +72,20 @@ ready ->
 
   if $('body').hasClass('press') || $('body').hasClass('blog')
     $('.badge').addClass('reversed')
+
+
+
+
+
+  $('.star_events .event').click ->
+    if !$(this).hasClass('opened')
+      $(this).addClass('opened')
+      $(this).find('.toggleIcon').html('-')
+      $(this).next().slideDown()
+    else
+      $(this).removeClass('opened')
+      $(this).find('.toggleIcon').html('+')
+      $(this).next().slideUp()
+
+
+

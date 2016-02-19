@@ -61,7 +61,9 @@
       display: flex
       flex-flow: column nowrap
       align-items: center
-      justify-content: center
+      justify-content: space-between
+
+      overflow-y: scroll
 
       .content
         text-align: left
@@ -69,6 +71,8 @@
         height: 50%
         height: 50vh
         padding: 30px 0
+        flex: 1 0
+        margin-bottom: 30px
 
         .title
           font-size: 36px
@@ -81,38 +85,66 @@
           text-transform: uppercase
 
         .text
-          font-size: 20px
+          font-size: 17px
           color: #3C3D3C
           text-align: left
           letter-spacing: 2.5px
-          line-height: 26px
+          line-height: 22px
           margin-bottom: 25px
 
       .star_events
-        display: flex
-        height: 50%
-        height: 50vh
+        flex: 0 0
+        /* display: flex */
+        /* height: 50% */
+        /* height: 50vh */
         width: 100%
-        flex-flow: column nowrap
+        /* flex-flow: column nowrap */
         position: relative
         z-index: 10
 
         .event
-          height: 20%
+          /* height: 20% */
+          /* flex: 0 */
           width: 100%
           font-weight: 800
           color: #fff
-          padding: 0 55px
+          padding: 20px 55px
           cursor: pointer
 
           display: flex
           flex-flow: row nowrap
           align-items: center
           justify-content: flex-start
+        .event_text
+          display: none
+          padding: 20px 50px
+
+
+          .title
+            font-weight: 800
+            font-size: 18px
+            color: #3C3D3C
+            letter-spacing: 2px
+            line-height: 24px
+            margin-bottom: 12px
+
+          .subtitle
+            font-style: italic
+            font-size: 15px
+            color: #3C3D3C
+            letter-spacing: 1.5px
+            line-height: 22px
+            margin-bottom: 6px
+
+          .text
+            font-size: 15px
+            color: #3C3D3C
+            letter-spacing: 2px
+            line-height: 22px
 
         .toggleIcon,
         .name
-          font-size: 30px
+          font-size: 24px
           color: #FEFEFE
           letter-spacing: 4.01px
           line-height: 35px
@@ -126,9 +158,10 @@
 
         .stars
           flex: 1 0 45%
-
+          height: 30px
           svg
             margin-right: 8px
+            height: 100%
 
         .one-star
           background: #3C3D3C
