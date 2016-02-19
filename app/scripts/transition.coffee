@@ -77,7 +77,7 @@ module.exports = class Transition
       unless @scrollDisabled
         @scrollDisabled = true
         @move(scrollInfo)
-        runNext 1200, =>
+        runNext 600, =>
           @scrollDisabled = false
 
     if e.preventDefault
@@ -100,11 +100,15 @@ module.exports = class Transition
       @setState(currentState)
 
   setPhase: (index) =>
-    $('.phases .phase').removeClass('active')
-    $('.phase_content').hide()
-    $(".phases .phase_#{index}").addClass('active')
-    $(".phase_content.phase_#{index}").fadeIn('300')
-    phase = index
+    unless @scrollDisabled
+      @scrollDisabled = true
+      $('.phases .phase').removeClass('active')
+      $('.phase_content').hide()
+      $(".phases .phase_#{index}").addClass('active')
+      $(".phase_content.phase_#{index}").fadeIn('300')
+      phase = index
+      runNext 400, =>
+        @scrollDisabled = false
 
 
 
@@ -123,7 +127,7 @@ module.exports = class Transition
       unless @scrollDisabled
         @scrollDisabled = true
         @move('next')
-        runNext 1200, =>
+        runNext 600, =>
           @scrollDisabled = false
 
     right_arrow.click =>
@@ -133,10 +137,9 @@ module.exports = class Transition
     that = @
     $('.phase').click ->
       return false if $(this).hasClass('active')
+
       index = $(this).data('index')
       that.setPhase(index)
-
-
 
 
 
