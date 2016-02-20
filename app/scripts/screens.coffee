@@ -224,27 +224,38 @@ module.exports = class Screens
   highlightMenu: (index, state) =>
     console.log [index, state].join(',')
     switch [index, state].join(',')
+      when '0,'
+        arrow.removeClass('reversed')
+        donateLink.removeClass('reversed')
+        toggleMenu.removeClass('reversed')
+        badge.removeClass('reversed')
+
       when '1,0'
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
+        arrow.addClass('reversed')
 
       when '1,1'
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
+        arrow.addClass('reversed')
       when '2,0'
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.addClass('reversed')
+        arrow.addClass('reversed')
       when '3,'
         donateLink.addClass('reversed')
         toggleMenu.addClass('reversed')
         badge.addClass('reversed')
+        arrow.addClass('reversed')
       else
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.removeClass('reversed')
+        arrow.addClass('reversed')
 
 
 
