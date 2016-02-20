@@ -15,6 +15,9 @@
       left: 0
       width: 33%
 
+      +mobile
+        display: none
+
       .bg
         background: url('../images/sponsors.jpg') center center no-repeat
         background-size: cover
@@ -31,7 +34,11 @@
     margin-left: 33%
     overflow-y: scroll
     text-align: center
-    padding: 90px 0
+    padding: 130px 0 90px 0
+
+    +mobile
+      margin-left: initial
+      width: 100%
 
     .title
       position: relative
@@ -40,6 +47,13 @@
       letter-spacing: 4.81px
       line-height: 43px
       display: inline-block
+
+      +mobile
+        font-size: 50px
+        line-height: 59px
+        font-weight: bold
+        max-width: 370px
+
       &:after
         content: ''
         position: absolute
@@ -50,12 +64,21 @@
         width: 98%
         background: #A1252B
 
+        +mobile
+          width: 80%
+          bottom: -25px
+
     .logos
       width: 80%
       margin-top: 50px
       margin: 50px auto 20px auto
 
       text-align: center
+
+      +mobile
+        width: 100%
+        padding: 0 60px
+        margin-top: 75px
 
       .logo
         display: inline-block
@@ -65,14 +88,26 @@
       .logos_big
         .logo
           width: 50%
+          +mobile
+            width: 100%
+            margin: 4% 0
 
           & > img
             width: 80%
+            +mobile
+              width: 100%
 
       .logos_small
         .logo
           width: 33%
+          +mobile
+            width: 50%
+            margin: 2% 0
 
           & > img
             max-width: 60%
             max-height: 176px
+
+            +mobile
+              max-height: initial
+              max-width: 80%
