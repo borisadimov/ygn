@@ -1,18 +1,30 @@
 .host
+  +mobile
+    overflow: auto
   .host_view
     display: flex
     flex-flow: row nowrap
+
+    +mobile
+      flex-flow: column nowrap
 
     .left_side
       position: relative
       width: 50%
       height: 100%
       height: 100vh
+      padding: 90px 0
 
       display: flex
       flex-flow: column nowrap
       justify-content: center
       align-items: center
+
+      +mobile
+        width: 100%
+        height: initial
+        min-height: 100%
+        min-height: 100vh
 
       .bg
         background: url(../images/host.jpg) center 10% no-repeat
@@ -31,12 +43,20 @@
         color: #fff
         width: 80%
 
+        +mobile
+          width: 100%
+          padding: 0 30px
+
         .title
           font-size: 40px
           color: #FEFEFE
           letter-spacing: 5.35px
           line-height: 47px
           font-weight: 800
+
+          +mobile
+            font-size: 32px
+            line-height: 39px
 
         .text,
         .text_italic
@@ -45,6 +65,11 @@
           letter-spacing: 2.5px
           line-height: 26px
           margin-top: 15px
+
+          +mobile
+            font-size: 18px
+            line-height: 25px
+            letter-spacing: 2px
 
         .text_italic
           font-style: italic
@@ -65,6 +90,10 @@
 
       overflow-y: scroll
 
+      +mobile
+        width: 100%
+        position: static
+
       .content
         text-align: left
         width: 80%
@@ -73,6 +102,13 @@
         padding: 30px 0
         flex: 0 0 50vh
         margin-bottom: 30px
+
+        +mobile
+          height: initial
+          width: 100%
+          padding: 30px 30px 20px 30px
+          flex: 1 0 auto
+          margin-bottom: initial
 
         .title
           font-size: 36px
@@ -92,6 +128,9 @@
           line-height: 22px
           margin-bottom: 25px
 
+          +mobile
+            display: none
+
       .star_events
         flex: 0 0 auto
         width: 100%
@@ -99,7 +138,6 @@
         z-index: 10
 
         .event
-
           width: 100%
           font-weight: 800
           color: #fff
@@ -110,10 +148,13 @@
           flex-flow: row nowrap
           align-items: center
           justify-content: flex-start
+
+          +mobile
+            padding: 20px 30px
+
         .event_text
           display: none
           padding: 20px 50px
-
 
           .title
             font-weight: 800
@@ -137,6 +178,10 @@
             letter-spacing: 2px
             line-height: 22px
 
+            +mobile
+              font-size: 16px
+              line-height: 25px
+
         .toggleIcon,
         .name
           font-size: 24px
@@ -144,19 +189,38 @@
           letter-spacing: 4.01px
           line-height: 35px
 
+          +mobile
+            font-size: 15px
+            line-height: 28px
+            letter-spacing: 3.01px
+
         .toggleIcon
           flex: 0 0 5%
+
+          +mobile
+            flex: 1 0 8%
 
         .name
           flex: 0 1 45%
           margin-right: 5%
 
+          +mobile
+            flex: 1 0 52%
+
         .stars
           flex: 1 0 280px
           height: 30px
+          +mobile
+            height: 12px
+            flex: 1 0 40%
+
           svg
             margin-right: 8px
             height: 100%
+
+            +mobile
+              height: 100%
+              width: auto
 
         .one-star
           background: #3C3D3C
