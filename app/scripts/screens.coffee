@@ -30,7 +30,8 @@ module.exports = class Screens
 
   constructor: ->
     @move = _.throttle @_move, 1200
-    @touchMoveHandler = _.debounce @_touchMoveHandler, 100
+    # @touchMoveHandler = _.debounce @_touchMoveHandler, 100
+    @handleTouchMove = _.debounce @_handleTouchMove, 100
 
     @addTouchHandler()
 
@@ -293,22 +294,27 @@ module.exports = class Screens
   touchEndY = 0
   touchEndX = 0
 
-  _touchMoveHandler: (event) =>
+  touchMoveHandler: (event) =>
     e = event || window.event or e or e.originalEvent
+    @preventDefault(event)
+    @preventDefault(e)
     if @isReallyTouch(e)
       @preventDefault(event)
       unless @scrollDisabled
-        #if theres any #
-        touchEvents = @getEventsPage(e)
-        touchEndY = touchEvents.y
-        touchEndX = touchEvents.x
-        if Math.abs(touchStartX - touchEndX) < Math.abs(touchStartY - touchEndY)
-          if Math.abs(touchStartY - touchEndY) > $(window).height() / 100 * 5
-            console.log('touchmove')
-            if touchStartY > touchEndY
-              @move('next')
-            else if touchEndY > touchStartY
-              @move('prev')
+        @handleTouchMove(e)
+
+
+  _handleTouchMove: (e) =>
+    touchEvents = @getEventsPage(e)
+    touchEndY = touchEvents.y
+    touchEndX = touchEvents.x
+    if Math.abs(touchStartX - touchEndX) < Math.abs(touchStartY - touchEndY)
+      if Math.abs(touchStartY - touchEndY) > $(window).height() / 100 * 5
+        console.log('touchmove')
+        if touchStartY > touchEndY
+          @move('next')
+        else if touchEndY > touchStartY
+          @move('prev')
 
 
 
