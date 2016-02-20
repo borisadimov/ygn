@@ -16,6 +16,11 @@
     flex: 1 1 664px
     margin-bottom: 5vh
 
+    display: flex
+    flex-flow: column nowrap
+    justify-content: center
+    align-items: center
+
     .title
       display: inline-block
 
@@ -58,6 +63,9 @@
         display: flex
         justify-content: center
         align-items: center
+        +tablet
+          font-size: 30px
+          line-height: 30px
       .subtitle
         position: relative
         z-index: 2
@@ -67,6 +75,11 @@
         line-height: 18px
         letter-spacing: 1.5px
         margin-top: 20px
+        +tablet
+          font-size: 16px
+          line-height: 18px
+          letter-spacing: 1px
+          padding: 0 20px
 
       &:hover .bg
         transition: transform 2s
@@ -95,3 +108,7 @@
       letter-spacing: 4px
       color: #fff
       z-index: 1
+
+      +tablet
+        font-size: 30px
+        line-height: 30px

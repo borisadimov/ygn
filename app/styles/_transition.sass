@@ -57,6 +57,9 @@
       z-index: 1
       transform: translate3d(0,0,0)
       transition: transform .4s
+      +tablet
+        font-size: 40px
+        line-height: 50px
 
     .title_2
 
@@ -74,6 +77,9 @@
       transform: translate3d(0,0,0)
       opacity: 0.001
       transition: opacity .1s ease
+      +tablet
+        font-size: 40px
+        line-height: 50px
 
 
     .subtitle
@@ -86,6 +92,9 @@
       margin: 0 auto 10vh auto
       position: relative
       z-index: 1
+      +tablet
+        font-size: 18px
+        line-height: 26px
 
 
     .next_arrow
@@ -141,6 +150,8 @@
             transform: translate3d(0,-50%,0)
             z-index: 8
 
+            +tablet
+              transform: translate3d(0,-50%,0) translateX(-2px)
 
 
 
@@ -154,6 +165,10 @@
             color: #FEFEFE
             letter-spacing: 6px
             line-height: 54px
+            +tablet
+              font-size: 30px
+              line-height: 40px
+              letter-spacing: 2px
 
 
         .phase_1
@@ -215,6 +230,8 @@
             flex-flow: row nowrap
             align-items: stretch
             flex: 2 1 450px
+            +tablet
+              flex: 3 1
 
 
           .phase_title
@@ -262,6 +279,8 @@
             flex-flow: row nowrap
             align-items: stretch
             overflow: hidden
+            +tablet
+              flex: 1 1
             .step
               flex: 3 0
               display: flex
@@ -292,6 +311,9 @@
                 color: #FEFEFE
                 line-height: 26px
                 margin-bottom: 8px
+                +tablet
+                  font-size: 16px
+                  line-height: 22px
               .name
                 font-weight: 800
                 font-size: 24px
@@ -299,6 +321,10 @@
                 letter-spacing: 3px
                 line-height: 36px
                 text-align: left
+                +tablet
+                  font-size: 18px
+                  letter-spacing: 1px
+                  line-height: 28px
 
 
 
@@ -323,9 +349,17 @@
               .number
                 font-size: 26px
                 margin-bottom: 16px
+                +tablet
+                  font-size: 18px
               .name
                 font-size: 38px
                 text-align: center
+                +tablet
+                  font-size: 20px
+
+          &.phase_4, &.phase_3
+            .step_3
+              flex: 4 0
 
     &.state-1
       .next_arrow
@@ -345,6 +379,9 @@
         transition: opacity .4s ease
       .bg
         max-height: 380px
+
+
+
 
 
 
