@@ -80,6 +80,10 @@ ready ->
     $('.badge').addClass('reversed')
 
 
+  if $('body').hasClass('blog')
+    $('.button-all').click ->
+      $('.navigation-title').toggleClass('navigation-titleActive')
+      $('.navigation-list').slideToggle('fast')
 
 
 
@@ -92,6 +96,3 @@ ready ->
       $(this).removeClass('opened')
       $(this).find('.toggleIcon').html('+')
       $(this).next().slideUp()
-
-
-

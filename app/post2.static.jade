@@ -19,20 +19,25 @@ body.blog
 
   .blog_view
     .blog_navigation
-      .navigation-list
-        .title
+      .navigation-content
+        .navigation-title
           | BLOG
-
-        .navigation-item.navigation-itemActive
-          a(href='./post1.html') ALL
-        .navigation-item
-          a(href='./soon.html') ARTICLES
-        .navigation-item
-          a(href='./soon.html') SOF VETS
-        .navigation-item
-          a(href='./soon.html') PODCASTS
-        .navigation-item
-          a(href='./soon.html') TESTIMONIALS
+          
+          .button-all
+            | ALL
+            include icons/all.svg
+          
+        .navigation-list
+          .navigation-item.navigation-itemActive
+            a(href='./post1.html') ALL
+          .navigation-item
+            a(href='./soon.html') ARTICLES
+          .navigation-item
+            a(href='./soon.html') SOF VETS
+          .navigation-item
+            a(href='./soon.html') PODCASTS
+          .navigation-item
+            a(href='./soon.html') TESTIMONIALS
 
     .blog_posts
       .post.greatCities.post_titleActive
@@ -122,5 +127,3 @@ body.blog
 
         .text
           | Now that veterans are turning to these cities to begin their civilian careers, area employers are waking up to the benefits of hiring candidates with Special Forces experience. Hiring managers are interviewing, recruiting, and developing more veterans than their counterparts in other cities—and reaping the rewards as a result. Your past Special Forces experience will be seen as an advantage in any of these vet-friendly locations.
-
-

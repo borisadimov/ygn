@@ -1,9 +1,13 @@
 .blog
   overflow: scroll
+  -webkit-overflow-scrolling: touch
 
   .blog_view
     display: flex
     flex-flow: row nowrap
+
+    +mobile
+      flex-flow: column nowrap
 
     .blog_navigation
       height: 100%
@@ -20,18 +24,37 @@
       flex-flow: column nowrap
       align-items: center
 
-      .navigation-list
+      +mobile
+        width: 100%
+        width: 100vw
+        height: initial
+        position: static
+
+      .navigation-content
         display: flex
         flex-flow: column nowrap
         width: 75%
         margin-top: 184px
+        padding: 20px 0
 
-        .title
+        +tablet
+          width: 80%
+
+        +mobile
+          margin-top: 100px
+          width: 100%
+          padding: 0px 30px
+
+        .navigation-title
           font-size: 36px
           letter-spacing: 4.81px
           line-height: 43px
           position: relative
           margin-bottom: 33px
+          display: flex
+          flex-flow: row nowrap
+          align-items: center
+          justify-content: space-between
 
           +tablet
             font-size: 26px
@@ -41,25 +64,67 @@
             content: ''
             width: 30%
             height: 2px
+            // background: #fff
             background: #EF2620
             position: absolute
             left: 0
             bottom: -10px
 
-        .navigation-item
-          font-size: 20px
-          letter-spacing: 2.67px
-          line-height: 40px
+            +mobile
+              height: 1px
 
-          & > a
-            color: #333333
-            transition: color .2s ease
+          .button-all
+            display: none
+            font-size: 18px
+            line-height: 25px
+            cursor: pointer
 
-          & > a:hover
+            +mobile
+              // display: initial
+              display: none
+
+            svg
+              display: inline-block
+              vertical-align: middle
+              width: 10px
+
+        .navigation-titleActive
+          &:after
+            background: #EF2620
+
+          .button-all
             color: #EF2620
 
-          &.navigation-itemActive > a
-            color: #EF2620
+            svg > * > *
+              fill: #EF2620
+
+        .navigation-list
+          display: flex
+          flex-flow: column nowrap
+
+          +mobile
+            width: 100%
+            display: none
+            padding-bottom: 30px
+
+          .navigation-item
+            font-size: 20px
+            letter-spacing: 2.67px
+            line-height: 40px
+
+            +mobile
+              font-size: 36px
+              line-height: 50px
+
+            & > a
+              color: #333333
+              transition: color .2s ease
+
+            & > a:hover
+              color: #EF2620
+
+            &.navigation-itemActive > a
+              color: #EF2620
 
 
 
@@ -78,6 +143,12 @@
 
       position: absolute
 
+      +mobile
+        width: 100%
+        width: 100vw
+        margin-left: initial
+        position: static
+
       .post
         position: relative
         overflow: hidden
@@ -90,6 +161,9 @@
         display: flex
         flex-flow: column nowrap
         align-items: center
+
+        +mobile
+          height: initial
 
         .bg
           will-change: transform
@@ -106,6 +180,10 @@
           position: relative
           width: 90%
           padding: 50px 0
+
+          +mobile
+            padding: 50px 30px
+            width: 100%
 
         &_date
           font-size: 16px
@@ -175,16 +253,29 @@
       display: flex
       justify-content: space-around
 
+      +mobile
+        width: 100%
+        width: 100vw
+        margin-left: initial
+        padding: 0 0 100px
+
       .openedPost-container
         width: 90%
         font-weight: 800
         color: #333333
+
+        +mobile
+          width: 100%
+          padding: 0 30px
 
         .title
           font-size: 34px
           color: #0A3661
           letter-spacing: 4.54px
           line-height: 40px
+
+          +mobile
+            margin-top: 15px
 
         .date
           font-size: 14px

@@ -19,20 +19,25 @@ body.blog
 
   .blog_view
     .blog_navigation
-      .navigation-list
-        .title
+      .navigation-content
+        .navigation-title
           | BLOG
-
-        .navigation-item.navigation-itemActive
-          a(href='./post1.html') ALL
-        .navigation-item
-          a(href='./soon.html') ARTICLES
-        .navigation-item
-          a(href='./soon.html') SOF VETS
-        .navigation-item
-          a(href='./soon.html') PODCASTS
-        .navigation-item
-          a(href='./soon.html') TESTIMONIALS
+          
+          .button-all
+            | ALL
+            include icons/all.svg
+          
+        .navigation-list
+          .navigation-item.navigation-itemActive
+            a(href='./post1.html') ALL
+          .navigation-item
+            a(href='./soon.html') ARTICLES
+          .navigation-item
+            a(href='./soon.html') SOF VETS
+          .navigation-item
+            a(href='./soon.html') PODCASTS
+          .navigation-item
+            a(href='./soon.html') TESTIMONIALS
 
     .blog_posts
       .post.greatCities
@@ -122,4 +127,3 @@ body.blog
 
         .text
           | SOF vets have been in situations that make the most stressful day in the civilian workforce feel like a walk in the park. Government agencies like FEMA are willing to pay top-dollar for that kind of expertise (to the tune of $80-$100K per year) while civilian employers like the Red Cross need the leadership skills you have sharpened during years of service. Disaster Response and Crisis Management positions appeal to SOF vets with an allergic reaction to boredom, and will leave you with a sense of having accomplished something real and meaningful at the end of your day.
-
