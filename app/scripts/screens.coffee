@@ -294,12 +294,21 @@ module.exports = class Screens
   touchEndY = 0
   touchEndX = 0
 
+  touched = false
+
+  touchMenu: (event) =>
+    e = event || window.event or e or e.originalEvent
+    e.stopPropagation()
+
   touchMoveHandler: (event) =>
     e = event || window.event or e or e.originalEvent
-    @preventDefault(event)
-    @preventDefault(e)
+    if touched
+      @preventDefault(e)
     if @isReallyTouch(e)
-      @preventDefault(event)
+      if touched
+        @preventDefault(e)
+      else
+        touched = true
       unless @scrollDisabled
         @handleTouchMove(e)
 
@@ -335,6 +344,7 @@ module.exports = class Screens
   addTouchHandler: =>
     if isTouchDevice or isTouch
       wrapper = $('body')[0]
+      menu_wrapper = $('.menu')[0]
       if document.addEventListener
         MSPointer = @getMSPointer()
         wrapper.removeEventListener 'touchstart', @touchStartHandler
@@ -343,6 +353,7 @@ module.exports = class Screens
         wrapper.removeEventListener MSPointer.move, @touchMoveHandler
         @addListenerMulti wrapper, 'touchstart ' + MSPointer.down, @touchStartHandler
         @addListenerMulti wrapper, 'touchmove ' + MSPointer.move, @touchMoveHandler
+        @addListenerMulti menu_wrapper, 'touchmove ' + MSPointer.move, @touchMenu
     return
 
   getMSPointer: =>
