@@ -20,6 +20,12 @@
     width: 120px
     z-index: 4
 
+    +mobile
+      left: 10px
+      transform: none
+      height: 70px
+      width: 90px
+
     i
       position: relative
       font-size: 20px
@@ -29,6 +35,9 @@
       cursor: pointer
       &:hover
         color: #DBB225
+
+      +mobile
+        font-size: 18px
 
 
 
@@ -48,6 +57,7 @@
     +mobile
       height: 150px
       margin-bottom: 40px
+      padding: 0 30px
     +short
       height: 150px
       margin-bottom: 40px
@@ -108,6 +118,8 @@
     right: 0
     bottom: 0
     z-index: 0
+    +mobile
+      background-position: 70% 50%
 
 
 
