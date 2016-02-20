@@ -138,16 +138,19 @@ module.exports = class Challenge
 
     point_issue.click =>
       @setState(1)
+      currentState = 1
       @scrollDisabled = true
       runNext 1200, =>
         @scrollDisabled = false
     point_opportunity.click =>
       @setState(2)
+      currentState = 2
       @scrollDisabled = true
       runNext 1200, =>
         @scrollDisabled = false
     point_solution.click =>
       @setState(3)
+      currentState = 3
       @scrollDisabled = true
       runNext 1200, =>
         @scrollDisabled = false

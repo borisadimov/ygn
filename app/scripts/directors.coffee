@@ -6,23 +6,8 @@ module.exports = class Directors
 
   arrow = null
 
-
-  donateLink = null
-  toggleMenu = null
-  badge = null
-
-
-  challenge_view = null
-
-  points = null
-
-  point_issue = null
-  point_opportunity = null
-  point_solution = null
-
-
-
-  states = ['', 'state-1', 'state-2', 'state-3', 'state-4']
+  directors = null
+  links = null
 
   currentState = 0
 
@@ -42,22 +27,12 @@ module.exports = class Directors
     @createScrollListener(container, @onScroll)
     arrow = $('.next_arrow')
 
-    donateLink = $('.donate_link')
-    toggleMenu = $('.toggle_menu')
-    badge = $('.badge')
-
-    toggleMenu.addClass('reversed')
-    donateLink.addClass('reversed')
-
-    challenge_view = $('.challenge_view')
-
-    points = $('.challenge_view .point')
-
-    point_issue = $('.challenge_view .point.issue')
-    point_opportunity = $('.challenge_view .point.opportunity')
-    point_solution = $('.challenge_view .point.solution')
+    directors = $('.directors .director')
+    links = $('.directors .directors_view .links a')
 
     @setHandlers()
+
+    @setState(0)
 
 
   createScrollListener: (elem, handler) =>
@@ -101,9 +76,13 @@ module.exports = class Directors
 
 
   moveNext: =>
-    if currentState < states.length - 1
+    if currentState < links.length - 1
       currentState++
       @setState(currentState)
+    else
+      currentState = 0
+      @setState(currentState)
+
 
 
   movePrev: =>
@@ -111,22 +90,20 @@ module.exports = class Directors
     if currentState > 0
       currentState--
       @setState(currentState)
-
+    else
+      currentState = links.length - 1
+      @setState(currentState)
 
 
   setState: (index) =>
-    challenge_view.removeClass(states.join(' '))
-    challenge_view.addClass(states[index])
+    directors.removeClass('showed')
+    links.removeClass('active')
+    runNext 310, =>
+      directors.eq(index).addClass('showed')
+      link = links.eq(index)
+      console.log link
 
-    if index is 0
-      toggleMenu.addClass('reversed')
-      donateLink.addClass('reversed')
-      $('.content .social_icons').addClass('reversed')
-    else
-      toggleMenu.removeClass('reversed')
-      donateLink.removeClass('reversed')
-      $('.content .social_icons').removeClass('reversed')
-
+      link.addClass('active')
 
   setHandlers: =>
     arrow.click =>
@@ -135,22 +112,15 @@ module.exports = class Directors
         @move('next')
         runNext 1200, =>
           @scrollDisabled = false
+    that = this
+    links.click (event) ->
+      event.preventDefault()
+      index = $(this).index()
+      currentState = index
+      that.setState(index)
+      event.returnValue = false
+      return false
 
-    point_issue.click =>
-      @setState(1)
-      @scrollDisabled = true
-      runNext 1200, =>
-        @scrollDisabled = false
-    point_opportunity.click =>
-      @setState(2)
-      @scrollDisabled = true
-      runNext 1200, =>
-        @scrollDisabled = false
-    point_solution.click =>
-      @setState(3)
-      @scrollDisabled = true
-      runNext 1200, =>
-        @scrollDisabled = false
 
 
 

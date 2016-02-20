@@ -57,6 +57,12 @@ ready ->
 
 
 
+  if $('body').hasClass('directors')
+    window.directors = new (require('scripts/directors'))
+    directors.init()
+
+
+
   if $('body').hasClass('transition')
 
     window.transition = new (require('scripts/transition'))

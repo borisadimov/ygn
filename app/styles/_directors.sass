@@ -31,7 +31,7 @@
         z-index: 5
 
         opacity: 0.001
-
+        transition: opacity .3s ease
         display: flex
         flex-flow: column nowrap
         justify-content: center
@@ -42,9 +42,8 @@
 
         text-align: center
 
-        &:first-child
-          opacity: 1
-
+        &.showed
+          opacity: .999
 
         .avatar
           max-width: 35%
@@ -107,7 +106,7 @@
               font-size: 24px
               line-height: 45px
 
-            &:hover, &:active
+            &:hover, &:active, &.active
               color: #EF2620
 
 
