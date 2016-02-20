@@ -1,4 +1,7 @@
 .contact
+  +mobile
+    overflow-y: scroll
+
   .next_arrow
     left: 25%
     bottom: 5%
@@ -83,6 +86,24 @@
           color: #3C3D3C
           letter-spacing: 3.48px
           line-height: 26px
+
+
+    +mobile
+      display: flex
+      flex-flow: column-reverse
+      .left_side
+        flex: 1 0 auto
+        overflow: auto
+        position: relative
+        right: initial
+        top: initial
+        bottom: initial
+        left: initial
+        height: 100vh
+      .right_side
+        position: static
+        flex: 1 0 auto
+
 
 
 
