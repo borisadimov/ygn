@@ -69,7 +69,7 @@
           +mobile
             font-size: 18px
             line-height: 25px
-            letter-spacing: 2px
+            letter-spacing: 1.5px
 
         .text_italic
           font-style: italic
@@ -129,7 +129,7 @@
           margin-bottom: 25px
 
           +mobile
-            display: none
+            letter-spacing: 1px
 
       .star_events
         flex: 0 0 auto
@@ -141,13 +141,16 @@
           width: 100%
           font-weight: 800
           color: #fff
-          padding: 20px 55px
+          padding: 22px 55px
           cursor: pointer
 
           display: flex
           flex-flow: row nowrap
           align-items: center
           justify-content: flex-start
+
+          +tablet
+            padding: 20px 30px
 
           +mobile
             padding: 20px 30px
@@ -201,26 +204,36 @@
             flex: 1 0 8%
 
         .name
-          flex: 0 1 45%
-          margin-right: 5%
+          flex: 0 0 52%
+
+          +tablet
+            flex: 1 0 62%
 
           +mobile
             flex: 1 0 52%
 
         .stars
-          flex: 1 0 280px
-          height: 30px
+          flex: 1 0 42%
+          height: 26px
+
+          +tablet
+            flex: 1 0 40%
+            height: 15px
+
           +mobile
-            height: 12px
+            height: 16px
             flex: 1 0 40%
 
           svg
-            margin-right: 8px
             height: 100%
+            width: auto
+            margin-right: 8px
+
+            +tablet
+              margin-right: 3px
 
             +mobile
-              height: 100%
-              width: auto
+              margin-right: 3px
 
         .one-star
           background: #3C3D3C
