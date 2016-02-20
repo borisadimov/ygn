@@ -21,6 +21,9 @@
     justify-content: center
     align-items: center
 
+    +mobile
+      margin-bottom: 0
+
     .title
       display: inline-block
 
@@ -32,6 +35,9 @@
     display: flex
     width: 100%
     position: relative
+    +mobile
+      flex: 0 1 80px
+
     .participate, .support
       font-weight: 800
       font-size: 45px
@@ -66,6 +72,11 @@
         +tablet
           font-size: 30px
           line-height: 30px
+        +mobile
+          font-size: 18px
+          line-height: 22px
+          letter-spacing: initial
+
       .subtitle
         position: relative
         z-index: 2
@@ -80,6 +91,8 @@
           line-height: 18px
           letter-spacing: 1px
           padding: 0 20px
+        +mobile
+          display: none
 
       &:hover .bg
         transition: transform 2s
@@ -112,3 +125,5 @@
       +tablet
         font-size: 30px
         line-height: 30px
+      +mobile
+        display: none

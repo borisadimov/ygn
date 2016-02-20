@@ -22,6 +22,9 @@
     left: 15px
     width: 40px
     height: 67px
+  +mobile
+    display: none
+
 
 a.donate_link
   position: fixed
@@ -37,6 +40,11 @@ a.donate_link
   color: #fff
   cursor: pointer
   transition: color .3s ease
+
+  +mobile
+    right: 50px
+    line-height: 95px
+
   &:hover
     color: #EF2620
 
@@ -65,13 +73,18 @@ a.donate_link
     top: 28px
 
   +mobile
-    top: 24px
+    top: 15px
+    right: 15px
 
   +short
     top: 24px
 
   body:not(.index) &
     top: 19px
+
+    +mobile
+      top: 15px
+      right: 15px
 
 
   &:hover
@@ -107,6 +120,10 @@ a.donate_link
   &.open
     right: 45px
 
+    +mobile
+      top: 25px
+      right: 15px
+
     span
       &:nth-child(1)
         top: 11px
@@ -132,9 +149,12 @@ a.donate_link
   transition: opacity .3s ease
   cursor: pointer
   transition-delay: 1s
-  &.reversed svg
-    path,g
-      stroke: #A1252B
+  &.reversed
+    +mobile
+      display: none
+    svg
+      path,g
+        stroke: #A1252B
 
 
   +mobile
@@ -181,9 +201,12 @@ a.donate_link
 
 
 
+
   .left_side
     display: flex
     flex-flow: column nowrap
+    +mobile
+      display: none
 
     .donate, .participate, .support
       flex: 1 0 33%
@@ -258,6 +281,12 @@ a.donate_link
     display: flex
     flex-flow: column nowrap
     justify-content: space-between
+
+    +mobile
+      left: 0%
+      padding: 0 15px
+      justify-content: flex-start
+
     .social_icons
 
       height: 90px
@@ -266,6 +295,11 @@ a.donate_link
       align-items: center
       width: 120px
       z-index: 4
+      +mobile
+        height: 70px
+        width: 90px
+        left: 15px
+
       i
         position: relative
         font-size: 20px
@@ -338,12 +372,14 @@ a.donate_link
         letter-spacing: 3.33px
         line-height: 30px
 
-        +mobile
-          font-size: 15px
-          line-height: 22px
         +short
           font-size: 15px
           line-height: 22px
+
+        +mobile
+          font-size: 15px
+          line-height: 36px
+          text-align: center
 
         &:hover, &:active
           color: #EF2620

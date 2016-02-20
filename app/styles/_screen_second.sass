@@ -24,6 +24,8 @@
   width: 100vw
   height: 100vh
   .left_side
+    +mobile
+      display: none
     .bg_1
       background: url(../images/who_we_are_1.jpg) center 10% no-repeat
       background-size: cover
@@ -63,6 +65,12 @@
       z-index: 4
       transition: opacity .5s ease
       -webkit-backface-visibility: hidden
+
+
+  .right_side
+    +mobile
+      left: 0
+
 
 
   .scroller .illustration
@@ -106,6 +114,8 @@
       .content
         +tablet
           padding-top: 10vh
+        +mobile
+          padding-top: 10vh
         .title, .intro
           transition: all .2s ease-in-out
           opacity: 0.001
@@ -145,6 +155,8 @@
     .what_we_do
       .content
         +tablet
+          padding-top: 10vh
+        +mobile
           padding-top: 10vh
 
         .title, .intro
