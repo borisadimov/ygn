@@ -1,4 +1,6 @@
 .events
+  +mobile
+    overflow: auto
 
   .events_title
     height: 46%
@@ -16,6 +18,10 @@
     justify-content: center
     align-items: center
 
+    +mobile
+      height: initial
+      padding: 240px 0 200px 0
+
     .title
       font-size: 46px
       color: #FEFEFE
@@ -23,6 +29,9 @@
       line-height: 56px
       font-weight: 800
       margin-bottom: 30px
+
+      +mobile
+        margin-bottom: initial
 
     .text
       font-size: 18px
@@ -33,6 +42,8 @@
       margin: 0 auto
       line-height: 30px
 
+      +mobile
+        display: none
 
       & > span
         font-weight: 800
@@ -52,6 +63,14 @@
       flex-flow: row wrap
       align-items: stretch
 
+      +mobile
+        flex-flow: column nowrap
+        align-items: center
+        flex: 0 0 100%
+
+        height: initial
+        min-height: 100%
+
       .events_town
         flex: 0 0 50%
 
@@ -62,6 +81,10 @@
         cursor: pointer
         overflow: hidden
 
+        +mobile
+          width: 100%
+          padding: 68px 0 110px 0
+
         .date
           z-index: 2
           font-size: 15px
@@ -70,6 +93,11 @@
     .events_yourCity
       height: 100%
       flex: 0 0 33.33%
+
+      +mobile
+        flex: 0 0 100%
+        height: initial
+        padding: 90px 0
 
       span
         font-size: 20px
@@ -85,6 +113,10 @@
         font-weight: 400
         z-index: 2
         padding-right: 39px
+
+      .bg
+        +mobile
+          background: #fff !important
 
     .events_yourCity,
     .events_town
