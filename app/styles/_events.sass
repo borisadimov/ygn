@@ -32,6 +32,8 @@
 
       +mobile
         margin-bottom: initial
+        font-size: 50px
+        line-height: 59px
 
     .text
       font-size: 18px
@@ -84,11 +86,16 @@
         +mobile
           width: 100%
           padding: 68px 0 110px 0
+          height: 285px
 
         .date
           z-index: 2
           font-size: 15px
           line-height: 17px
+
+          +mobile
+            font-size: 26px
+            line-height: 30px
 
     .events_yourCity
       height: 100%
@@ -97,7 +104,8 @@
       +mobile
         flex: 0 0 100%
         height: initial
-        padding: 90px 0
+        padding: 56px 0 70px 0
+        min-height: 250px
 
       span
         font-size: 20px
@@ -106,6 +114,11 @@
         line-height: 23px
         z-index: 2
 
+        +mobile
+          color: #000
+          font-size: 26px
+          line-height: 30px
+
       .button
         margin-top: 20px
         font-size: 22px
@@ -113,6 +126,10 @@
         font-weight: 400
         z-index: 2
         padding-right: 39px
+
+        +mobile
+          margin-top: 26px
+          font-size: 24px
 
       .bg
         +mobile
@@ -159,6 +176,10 @@
           height: 2px
           opacity: 0.001
           transition: opacity .3s ease
+
+        +mobile
+          font-size: 50px
+          line-height: 59px
 
       &:hover
         .bg
