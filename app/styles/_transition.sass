@@ -1,4 +1,7 @@
 .transition
+  +mobile
+    overflow-y: scroll
+
   a.apply_link
     position: fixed
     z-index: 20
@@ -32,6 +35,12 @@
     flex-flow: column nowrap
     justify-content: center
 
+    +mobile
+      justify-content: space-between
+      padding-top: 8vh
+      height: auto
+      min-height: 100%
+
 
     .bg
       position: absolute
@@ -60,6 +69,10 @@
       +tablet
         font-size: 40px
         line-height: 50px
+      +mobile
+        font-size: 30px
+        line-height: 36px
+        padding: 0 15px
 
     .title_2
 
@@ -80,7 +93,8 @@
       +tablet
         font-size: 40px
         line-height: 50px
-
+      +mobile
+        display: none
 
     .subtitle
       font-size: 20px
@@ -95,13 +109,19 @@
       +tablet
         font-size: 18px
         line-height: 26px
+      +mobile
+        font-size: 18px
+        line-height: 18px
+        padding: 0 15px
+
 
 
     .next_arrow
       bottom: 28vh
       width: 60px
       height: 60px
-
+      +mobile
+        display: none
 
     .phases_block
       position: absolute
@@ -118,6 +138,14 @@
       flex-flow: column nowrap
       align-items: stretch
 
+      +mobile
+        position: relative
+        top: initial
+        left: initial
+        transform: none !important
+        height: auto
+        flex: 1 0 50vh
+
 
       .phases
         flex: 0 0 140px
@@ -127,6 +155,10 @@
         flex-flow: row nowrap
         align-items: stretch
         overflow: hidden
+        +mobile
+          flex-flow: column nowrap
+          flex: 1 0 auto
+          height: auto
         .phase
           flex: 1 0
           display: flex
@@ -136,6 +168,8 @@
           padding-left: 5vw
           cursor: pointer
           position: relative
+
+
           &:after
             content: ""
             display: block
@@ -152,6 +186,32 @@
 
             +tablet
               transform: translate3d(0,-50%,0) translateX(-2px)
+          +mobile
+            flex: 1 0 12vh
+            align-items: center
+
+            padding: 40px 0 0px 0
+            &:first-child
+              padding: 20px 0 10px 0
+            &:last-child
+              flex: 1 0 14vh
+              padding: 40px 0 20px 0
+
+            &:after
+              content: ""
+              display: block
+              position: absolute
+              width: 0px
+              height: 0px
+              border-top: 30px solid transparent
+              border-left: 50vw solid transparent
+              border-right: 50vw solid transparent
+              border-bottom: 0px solid transparent
+              left: 50%
+              top: 100%
+              transform: translate3d(-50%,0,0)
+              z-index: 8
+
 
 
 
@@ -169,20 +229,34 @@
               font-size: 30px
               line-height: 40px
               letter-spacing: 2px
+            +mobile
+              font-size: 30px
+              line-height: 40px
+              letter-spacing: 2px
 
 
         .phase_1
           background: #486336
           &:after
             border-left: 30px solid #486336
+            +mobile
+              border-left: 50vw solid transparent
+              border-top: 20px solid #486336
         .phase_2
           background: #BFAD70
           &:after
             border-left: 30px solid #BFAD70
+            +mobile
+              border-left: 50vw solid transparent
+              border-top: 20px solid #BFAD70
+
         .phase_3
           background: #3C3D3C
           &:after
             border-left: 30px solid #3C3D3C
+            +mobile
+              border-top: 20px solid #3C3D3C
+              border-left: 50vw solid transparent
         .phase_4
           background: #253757
           &:after
@@ -200,6 +274,8 @@
             color: #253757
           &:after
             border-left-color: #FEFEFE
+            +mobile
+              display: none
 
 
 
@@ -208,6 +284,10 @@
         flex: 2 1 450px
         background: #FEFEFE
         position: relative
+        +mobile
+          flex: 1 1 0%
+          display: none
+
         .phase_content
           position: absolute
           top: 0
@@ -362,6 +442,7 @@
               flex: 4 0
 
     &.state-1
+      display: block
       .next_arrow
         display: none
       .phases_block
@@ -379,6 +460,71 @@
         transition: opacity .4s ease
       .bg
         max-height: 380px
+
+      +mobile
+        padding-top: 100px
+        .phases_block
+          height: auto
+          display: block
+          position: relative
+          top: 0
+          .phases
+
+            .phase
+              display: none
+              &.active
+                display: flex
+
+
+          .content
+            display: block
+            padding-bottom: 150px
+            .phase_content
+              position: static
+              .wrapper
+                position: relative
+                display: block
+                height: auto
+                z-index: 100
+                .info
+                  display: block
+            .phase_title
+              display: none
+            .phase_text
+              .title
+                display: none
+
+              .text
+                padding: 20px 20px
+
+            .right_arrow
+              position: absolute
+              top: 100%
+              margin-top: 20px
+              left: 50%
+              margin-left: -60px
+              z-index: 50
+              display: block
+
+            .steps
+              display: block
+              height: auto
+              .step
+                padding: 30px 0
+                align-items: center
+
+                .number
+                  font-size: 15px
+                  line-height: 19px
+                .name
+                  font-size: 18px
+                  line-height: 24px
+
+                &:after
+                  font-size: 32px
+                  top: 100%
+                  left: 50%
+                  transform: translate3d(-50%, -50%, 0)
 
 
 
