@@ -233,33 +233,43 @@ module.exports = class Screens
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.removeClass('reversed')
-
       when '1,0'
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
         arrow.addClass('reversed')
+        if $(window).width() < 768
+          $('.donate_link').hide()
 
       when '1,1'
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
         arrow.addClass('reversed')
+        if $(window).width() < 768
+          $('.donate_link').hide()
       when '2,0'
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.addClass('reversed')
         arrow.addClass('reversed')
+        if $(window).width() < 768
+          $('.donate_link').hide()
       when '3,'
         donateLink.addClass('reversed')
         toggleMenu.addClass('reversed')
         badge.addClass('reversed')
         arrow.addClass('reversed')
+        if $(window).width() < 768
+          $('.donate_link').hide()
+
       else
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.removeClass('reversed')
         arrow.addClass('reversed')
+        if $(window).width() < 768
+          $('.donate_link').show()
 
 
 
