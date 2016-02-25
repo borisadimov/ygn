@@ -303,7 +303,7 @@ module.exports = class Screens
   touchEndY = 0
   touchEndX = 0
 
-  touched = false
+
 
   touchMenu: (event) =>
     e = event || window.event or e or e.originalEvent
@@ -311,13 +311,9 @@ module.exports = class Screens
 
   touchMoveHandler: (event) =>
     e = event || window.event or e or e.originalEvent
-    if touched
-      @preventDefault(e)
+    @preventDefault(e)
     if @isReallyTouch(e)
-      if touched
-        @preventDefault(e)
-      else
-        touched = true
+      @preventDefault(e)
       unless @scrollDisabled
         @handleTouchMove(e)
 
