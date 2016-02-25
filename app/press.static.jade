@@ -15,41 +15,46 @@ head
 
 body.press
   include pages/menu
+  .press_container
+    .press_articles
 
-  .press_articles
+      .press_list
+        .title PRESS
 
-    .press_list
-      .title PRESS
+        .month
+          .month_date JANUARY 2016
 
-      .month
-        .month_date JANUARY 2016
+          .month_article
+            .month_point 8
+            .month_name 
+              a(href="#") YGN WELCOMES NEW SCHMIEF SCHMESCHMELMENT SCHMOFFICER
 
-        .month_article
-          .month_point 8
-          .month_name YGN WELCOMES NEW SCHMIEF SCHMESCHMELMENT SCHMOFFICER
+          .month_article.month_articleActive
+            .month_point 4
+            .month_name 
+              a(href="#") YGN WELCOMES NEW CHIEF DEVELOPMENT OFFICER
 
-        .month_article.month_articleActive
-          .month_point 4
-          .month_name YGN WELCOMES NEW CHIEF DEVELOPMENT OFFICER
+        .month
+          .month_date NOVEMBER 2015
 
-      .month
-        .month_date NOVEMBER 2015
+          .month_article
+            .month_point 18
+            .month_name 
+              a(href="#") GN SEEKS INTERESTED CANDIDATES TO FILL NEWLY CREATED CHIEF DEVELOPMENT OFFICER POSITION
 
-        .month_article
-          .month_point 18
-          .month_name GN SEEKS INTERESTED CANDIDATES TO FILL NEWLY CREATED CHIEF DEVELOPMENT OFFICER POSITION
+          .month_article
+            .month_point 16
+            .month_name 
+              a(href="#") FLEETMATICS SUPPORTS RECORD-BREAKING FUNDRAISING EFFORT
 
-        .month_article
-          .month_point 16
-          .month_name FLEETMATICS SUPPORTS RECORD-BREAKING FUNDRAISING EFFORT
+        .month
+          .month_date SEPTEMBER 2015
 
-      .month
-        .month_date SEPTEMBER 2015
+          .month_article
+            .month_point 9
+            .month_name 
+              a(href="#") YGN RECOGNIZED BY COMMERCIAL REAL ESTATE PUBLICATION
 
-        .month_article
-          .month_point 9
-          .month_name YGN RECOGNIZED BY COMMERCIAL REAL ESTATE PUBLICATION
-
-  .press_openedArtice
-    .opened_article
-      include press/article
+    .press_openedArtice
+      .opened_article
+        include press/article
