@@ -129,6 +129,7 @@
           &.scrolled
             transform: translate3d(0,-100%,0)
 
+
     .actions
       position: absolute
       bottom: 0
@@ -141,6 +142,9 @@
       transition: transform .4s ease
       will-change: transform
       transform: translate3d(0,100%,0)
+      +mobile
+        height: 20vh
+
       .participate, .support
         font-weight: 800
         font-size: 45px
@@ -175,6 +179,11 @@
           +tablet
             font-size: 30px
             line-height: 30px
+          +mobile
+            font-size: 18px
+            line-height: 22px
+            letter-spacing: initial
+
         .subtitle
           position: relative
           z-index: 2
@@ -189,7 +198,8 @@
             line-height: 18px
             letter-spacing: 1px
             padding: 0 20px
-
+          +mobile
+            display: none
 
         &:hover .bg
           transition: transform 2s
@@ -205,6 +215,8 @@
           background: url(../images/supporters.jpg) center center no-repeat
           background-size: cover
 
+
+
       .or
         top: 50%
         left: 50%
@@ -216,6 +228,12 @@
         letter-spacing: 4px
         color: #fff
         z-index: 1
+
+        +tablet
+          font-size: 30px
+          line-height: 30px
+        +mobile
+          display: none
 
 
 
@@ -302,3 +320,140 @@
           text-decoration: underline
       .actions
         transform: translate3d(0,0,0)
+
+
+
+  +mobile
+    .donate_link
+      display: none
+    .next_arrow
+      display: none
+    .challenge_view
+      .left_side
+        right: 0
+        transform: translate3d(0, 25vh, 0)
+        transition: transform .4s ease
+        will-change: transform
+        .bg_wrapper_2
+          transition: transform 1s ease .4s
+        .bg_2
+          transition: transform 1s ease .4s
+
+      .right_side
+        left: 0
+        bottom: initial
+        transition: transform .4s ease
+        will-change: transform
+
+        .social_icons
+          display: none
+
+        .part
+          display: none
+          &.title_part
+            display: block
+
+        .points
+          position: relative
+          max-height: 0
+          overflow: hidden
+          transition: max-height .3s ease
+          will-change: max-height
+
+          .point
+            position: static
+            transform: none !important
+            height: 10%
+            height: calc(10vh + 1px)
+
+          .point_content
+            max-height: 0
+            overflow: hidden
+            transition: max-height .5s ease
+            will-change: max-height
+            p
+              padding: 50px 30px 100px 30px
+              min-height: 70vh
+              font-size: 18px
+              line-height: 22px
+
+      &.state-0
+        .left_side
+          transform: translate3d(0, 0, 0)
+          .bg_wrapper_2
+            transition: transform 2s ease 1s
+            transform: translate3d(0,100vh,0)
+          .bg_2
+            transform: translate3d(0,-100vh,0)
+            transition: transform 2s ease 1s
+
+        .right_side
+          transform: translate3d(0, -25vh, 0)
+          .points
+            max-height: 0
+            .point_content.issue
+              max-height: 0
+
+
+      &.state-1
+        .left_side
+          transform: translate3d(0, 0, 0)
+          .bg_wrapper_2
+            transform: translate3d(0,100vh,0)
+          .bg_2
+            transform: translate3d(0,-100vh,0)
+
+        .right_side
+          transform: translate3d(0, -25vh, 0)
+          .points
+            max-height: 100vh
+            .point_content.issue
+              max-height: 70vh
+
+      &.state-2
+        .left_side
+          transform: translate3d(0, 0, 0)
+          .bg_wrapper_2
+            transform: translate3d(0,100vh,0)
+          .bg_2
+            transform: translate3d(0,-100vh,0)
+        .right_side
+          transform: translate3d(0, -25vh, 0)
+          .points
+            max-height: 100vh
+            .point_content.opportunity
+              max-height: 70vh
+
+
+      &.state-3
+        .left_side
+          transform: translate3d(0, 0, 0)
+          .bg_wrapper_2
+            transform: translate3d(0,100vh,0)
+          .bg_2
+            transform: translate3d(0,-100vh,0)
+        .right_side
+          transform: translate3d(0, -25vh, 0)
+          .points
+            max-height: 100vh
+            .point_content.solution
+              max-height: 70vh
+
+
+      &.state-4
+        .left_side
+          transform: translate3d(0, 0, 0)
+          .bg_wrapper_2
+            transform: translate3d(0,100vh,0)
+          .bg_2
+            transform: translate3d(0,-100vh,0)
+        .right_side
+          transform: translate3d(0, -25vh, 0)
+          .points
+            max-height: 100vh
+            .point_content.solution
+              max-height: 70vh
+
+
+
+

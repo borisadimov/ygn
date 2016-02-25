@@ -30,7 +30,6 @@ module.exports = class Screens
 
   constructor: ->
     @move = _.throttle @_move, 1200
-    # @touchMoveHandler = _.debounce @_touchMoveHandler, 100
     @handleTouchMove = _.debounce @_handleTouchMove, 100
 
     @addTouchHandler()
