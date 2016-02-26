@@ -30,6 +30,15 @@ toggleMenu = ->
 
 
 ready ->
+  $('body').fadeIn('fast')
+
+  $('a').click (event) ->
+    window.goto = $(this).attr("href")
+    $('body').fadeOut 'fast', ->
+      document.location.href = window.goto
+
+    event.preventDefault()
+
 
   if window.location.hostname.indexOf('github') > -1
     $('head').prepend('<base href="http://flywithmemsl.github.io/ygn/" />')
