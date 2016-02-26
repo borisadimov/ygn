@@ -17,7 +17,6 @@ module.exports = class Screens
   states =
     '0': []
     '1': ['state-1','state-2']
-    # '2': []
     '2': ['state-1']
     '3': []
     '4': []

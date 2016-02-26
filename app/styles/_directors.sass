@@ -99,7 +99,7 @@
             font-weight: 800
             text-transform: uppercase
             font-size: 26px
-            color: #0A3661
+            color: #253757
             letter-spacing: 4.4px
             line-height: 50px
 
@@ -112,13 +112,42 @@
               line-height: 45px
 
             &:hover, &:active, &.active
-              color: #EF2620
+              color: #A1252B
 
+  +mobile
+    .next_arrow
+      left: 50%
+    .donate_link
+      display: none
+    .toggle_menu
+      span
+        background: #fff
+      &.reversed
+        span
+          background: #fff
+      &.open
+        span
+          background: #A1252B
 
-
-
-    &.state-1
+    .directors_view
       .left_side
+        right: 0
 
 
       .right_side
+        display: none
+
+      .left_side .director
+        padding: 5vh 5vw
+        .text
+          display: none
+
+
+
+
+
+
+
+
+
+

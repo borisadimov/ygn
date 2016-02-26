@@ -1,13 +1,13 @@
 .press
   overflow: auto
   -webkit-overflow-scrolling: touch
-
+  +pattern
   .donate_link
     display: none
-    
+
   .toggle_menu > span
     +mobile
-      background: #EF2620
+      background: #A1252B
 
   .press_container
     +mobile
@@ -18,6 +18,7 @@
 
     .press_articles
       background: #fff
+      +pattern
       position: absolute
       left: 0
       height: 100%
@@ -45,7 +46,7 @@
 
       .title
         font-size: 36px
-        color: #333333
+        color: #3C3D3C
         letter-spacing: 4.81px
         line-height: 43px
         display: inline-block
@@ -59,7 +60,7 @@
         &:after
           content: ''
           height: 2px
-          background: #EF2620
+          background: #A1252B
           width: 95%
           position: absolute
           left: 0
@@ -74,7 +75,7 @@
 
         &_date
           font-size: 26px
-          color: #EF2620
+          color: #A1252B
           letter-spacing: 3.47px
           margin-top: 39px
           line-height: 40px
@@ -93,7 +94,7 @@
 
         &_point
           font-size: 20px
-          color: #EF2620
+          color: #A1252B
           letter-spacing: 2.67px
           line-height: 23px
           margin-left: 17px
@@ -104,19 +105,19 @@
 
         &_name
           font-size: 20px
-          color: #0A3661
+          color: #253757
           letter-spacing: 2.67px
           line-height: 23px
 
           & > a
-            color: #0A3661
+            color: #253757
 
           +mobile
             font-size: 17px
             line-height: 25px
 
     .month_articleActive > .month_name > a
-      color: #EF2620
+      color: #A1252B
 
     .press_openedArtice
       background: #253757

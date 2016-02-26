@@ -7,6 +7,7 @@ module.exports = class Transition
   arrow = null
 
   right_arrow = null
+  left_arrow = null
 
 
   donateLink = null
@@ -42,6 +43,7 @@ module.exports = class Transition
     arrow = $('.next_arrow')
 
     right_arrow = $('.right_arrow .arrow')
+    left_arrow = $('.left_arrow .arrow')
 
     donateLink = $('.donate_link')
     toggleMenu = $('.toggle_menu')
@@ -139,6 +141,12 @@ module.exports = class Transition
       if phase < 4
         phase++
         @setPhase(phase)
+
+    left_arrow.click =>
+      if phase > 1
+        phase--
+        @setPhase(phase)
+
     that = @
     $('.phase').click ->
       return false if $(this).hasClass('active')

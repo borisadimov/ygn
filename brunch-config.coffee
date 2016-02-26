@@ -14,7 +14,7 @@ exports.config =
 
   plugins:
     jade:
-      pretty: no # Adds pretty-indentation whitespaces to output (false by default)
+      pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
 
       locals:
         github: false

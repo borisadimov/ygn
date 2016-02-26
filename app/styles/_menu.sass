@@ -47,10 +47,10 @@ a.donate_link
     z-index: 102
 
   &:hover
-    color: #EF2620
+    color: #A1252B
 
   &.reversed
-    color: #EF2620
+    color: #A1252B
     &:hover
       color: #FF3630
 
@@ -90,11 +90,11 @@ a.donate_link
 
   &:hover
     span
-      background: #EF2620
+      background: #A1252B
 
   &.reversed
     span
-      background: #EF2620
+      background: #A1252B
     &:hover
       span
         background: #FF3630
@@ -128,11 +128,11 @@ a.donate_link
     span
       &:nth-child(1)
         top: 11px
-        background: #EF2620
+        background: #A1252B
         transform: rotate(135deg)
       &:nth-child(2)
         top: 11px
-        background: #EF2620
+        background: #A1252B
         transform: rotate(-135deg)
       &:nth-child(3)
         opacity: 0.0001
@@ -151,13 +151,13 @@ a.donate_link
   cursor: pointer
   transition-delay: 1s
   +mobile
-    width: 60px
-    height: 60px
-    bottom: 15px
+    width: 50px
+    height: 50px
+    bottom: 5px
 
   &.reversed
-    +mobile
-      display: none
+
+
     svg
       path,g
         stroke: #A1252B
@@ -182,6 +182,13 @@ a.donate_link
   svg
     width: 100%
     height: 100%
+
+.prev_arrow
+  @extend .next_arrow
+  bottom: initial !important
+  top: 20px
+  transform: rotate(180deg) translateX(50%)
+  transform-origin: 50% 50%
 
 
 .menu
@@ -287,6 +294,7 @@ a.donate_link
     display: flex
     flex-flow: column nowrap
     justify-content: space-between
+    +pattern
 
     +mobile
       left: 0%
@@ -314,10 +322,10 @@ a.donate_link
         font-size: 20px
         flex: 0 0
         transition: color .3s ease
-        color: #EF2620
+        color: #A1252B
         cursor: pointer
         &:hover
-          color: lighten(#EF2620, 10%)
+          color: lighten(#A1252B, 10%)
 
 
 
@@ -351,7 +359,7 @@ a.donate_link
         font-weight: 800
         text-transform: uppercase
         font-size: 30px
-        color: #333333
+        color: #3C3D3C
         letter-spacing: 4.4px
         line-height: 40px
         margin-bottom: 10px
@@ -366,7 +374,7 @@ a.donate_link
           line-height: 45px
 
         &:hover, &:active
-          color: #EF2620
+          color: #A1252B
 
 
     .sublinks
@@ -377,7 +385,7 @@ a.donate_link
       a
         text-transform: uppercase
         font-size: 16px
-        color: #333333
+        color: #3C3D3C
         letter-spacing: 3.33px
         line-height: 30px
 
@@ -391,4 +399,4 @@ a.donate_link
           text-align: center
 
         &:hover, &:active
-          color: #EF2620
+          color: #A1252B

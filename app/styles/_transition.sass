@@ -17,13 +17,14 @@
     cursor: pointer
     transition: color .3s ease
     &:hover
-      color: #EF2620
+      color: #A1252B
 
     &.reversed
-      color: #EF2620
+      color: #A1252B
       &:hover
         color: #FF3630
-
+    +mobile
+      display: none
 
 
   .transition_view
@@ -500,11 +501,47 @@
             .right_arrow
               position: absolute
               top: 100%
-              margin-top: 20px
+              margin-top: 40px
               left: 50%
-              margin-left: -60px
+              margin-left: 40px
+              z-index: 50
+              width: 60px
+              height: 60px
+              display: block
+              .arrow
+                width: 60px
+                height: 60px
+
+              .button
+                margin-top: 16px
+
+              svg
+                width: 100%
+                height: 100%
+
+            .left_arrow
+              position: absolute
+              top: 100%
+              margin-top: 40px
+              left: 50%
+              margin-left: -130px
               z-index: 50
               display: block
+              width: 60px
+              height: 60px
+              .arrow
+                width: 60px
+                height: 60px
+
+              transform: rotate(180deg)
+              transform-origin: 50% 50%
+
+              svg
+                width: 100%
+                height: 100%
+                path, circle
+                  stroke: #253757
+
 
             .steps
               display: block
@@ -527,6 +564,11 @@
                   transform: translate3d(-50%, -50%, 0)
 
 
+            .phase_1
+              .left_arrow
+                display: none
+              .right_arrow
+                margin-left: -40px
 
 
 

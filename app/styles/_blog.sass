@@ -14,10 +14,11 @@
       height: 100vh
       position: absolute
       background: #FFF
+      +pattern
       left: 0
       width: 20%
       width: 20vw
-      color: #333333
+      color: #3C3D3C
       font-weight: 800
 
       display: flex
@@ -65,7 +66,7 @@
             width: 30%
             height: 2px
             // background: #fff
-            background: #EF2620
+            background: #A1252B
             position: absolute
             left: 0
             bottom: -10px
@@ -90,13 +91,13 @@
 
         .navigation-titleActive
           &:after
-            background: #EF2620
+            background: #A1252B
 
           .button-all
-            color: #EF2620
+            color: #A1252B
 
             svg > * > *
-              fill: #EF2620
+              fill: #A1252B
 
         .navigation-list
           display: flex
@@ -117,14 +118,14 @@
               line-height: 50px
 
             & > a
-              color: #333333
+              color: #3C3D3C
               transition: color .2s ease
 
             & > a:hover
-              color: #EF2620
+              color: #A1252B
 
             &.navigation-itemActive > a
-              color: #EF2620
+              color: #A1252B
 
 
 
@@ -187,7 +188,7 @@
 
         &_date
           font-size: 16px
-          color: #EF2620
+          color: #A1252B
           letter-spacing: 2.59px
           line-height: 17px
           z-index: 2
@@ -209,7 +210,7 @@
 
         &_titleActive
           .post_title
-            border-bottom: 2px #EF2620 solid
+            border-bottom: 2px #A1252B solid
 
         &_text
           font-size: 18px
@@ -229,7 +230,7 @@
             transform: scale(1.1, 1.1)
 
           .post_title
-            border-bottom: 2px #EF2620 solid
+            border-bottom: 2px #A1252B solid
 
       .greatCities
         .bg
@@ -248,6 +249,7 @@
       min-height: 100%
       min-height: 100vh
       background: #fff
+      +pattern
       padding: 100px 0
 
       display: flex
@@ -262,7 +264,7 @@
       .openedPost-container
         width: 90%
         font-weight: 800
-        color: #333333
+        color: #3C3D3C
 
         +mobile
           width: 100%
@@ -270,7 +272,7 @@
 
         .title
           font-size: 34px
-          color: #0A3661
+          color: #253757
           letter-spacing: 4.54px
           line-height: 40px
 
@@ -279,7 +281,7 @@
 
         .date
           font-size: 14px
-          color: #EF2620
+          color: #A1252B
           letter-spacing: 2.59px
           line-height: 17px
           margin-top: 15px

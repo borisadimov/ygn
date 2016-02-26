@@ -329,6 +329,10 @@
     .next_arrow
       display: none
     .challenge_view
+      .next_arrow
+        display: block
+        transition: transform .3s ease
+        will-change: transform
       .left_side
         right: 0
         transform: translate3d(0, 25vh, 0)
@@ -372,7 +376,7 @@
             transition: max-height .5s ease
             will-change: max-height
             p
-              padding: 50px 30px 100px 30px
+              padding: 30px 30px 100px 30px
               min-height: 70vh
               font-size: 18px
               line-height: 22px
@@ -396,6 +400,11 @@
 
 
       &.state-1
+        .next_arrow
+          transform: translate3d(-50%, -230%, 0)
+          svg
+            path,g
+              stroke: #A1252B
         .left_side
           transform: translate3d(0, 0, 0)
           .bg_wrapper_2
@@ -411,6 +420,11 @@
               max-height: 70vh
 
       &.state-2
+        .next_arrow
+          transform: translate3d(-50%, -100%, 0)
+          svg
+            path,g
+              stroke: #A1252B
         .left_side
           transform: translate3d(0, 0, 0)
           .bg_wrapper_2
@@ -426,6 +440,11 @@
 
 
       &.state-3
+        .next_arrow
+          transform: translate3d(-50%, -50%, 0)
+          svg
+            path,g
+              stroke: #A1252B
         .left_side
           transform: translate3d(0, 0, 0)
           .bg_wrapper_2
