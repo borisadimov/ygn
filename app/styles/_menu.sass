@@ -42,8 +42,8 @@ a.donate_link
   transition: color .3s ease
 
   +mobile
-    right: 50px
-    line-height: 95px
+    right: 60px
+    line-height: 96px
     z-index: 102
 
   &:hover
@@ -52,7 +52,7 @@ a.donate_link
   &.reversed
     color: #A1252B
     &:hover
-      color: #FF3630
+      color: #A1252B
 
   body:not(.index) &
     line-height: 60px
@@ -60,7 +60,7 @@ a.donate_link
 
 
 .toggle_menu
-  width: 22px
+  width: 28px
   height: 24px
   position: fixed
   top: 33px
@@ -69,12 +69,29 @@ a.donate_link
   transition: transform 0.5s ease-in-out 0s, left 0.4s ease
   cursor: pointer
   z-index: 110
+  &:before
+    content: "menu"
+    color: #fff
+    display: block
+    position: absolute
+    top: 95%
+    left: 45%
+    transform: translateX(-50%)
+    text-align: center
+    width: 28px
+    font-size: 10px
+    text-transform: uppercase
+    font-weight: 700
+    opacity: .999
+    transition: opacity .3s ease, color .3s ease
+
+
 
   +tablet
-    top: 28px
+    top: 26px
 
   +mobile
-    top: 15px
+    top: 23px
     right: 15px
 
     &:after
@@ -102,18 +119,25 @@ a.donate_link
     span
       background: #A1252B
 
+    &:before
+      color: #A1252B
+
   &.reversed
     span
       background: #A1252B
+    &:before
+      color: #A1252B
     &:hover
       span
         background: #FF3630
+      &:before
+        color: #FF3630
 
 
   span
     display: block
     position: absolute
-    height: 1.3px
+    height: 1.5px
     width: 90%
     background: white
     border-radius: 9px
@@ -128,6 +152,9 @@ a.donate_link
     &:nth-child(3)
       top: 11px
       opacity: 1.0
+
+    +mobile
+      height: 1.2px
   &.open
     right: 45px
 
