@@ -33,11 +33,13 @@ ready ->
   $('body').fadeIn('fast')
 
   $('a').click (event) ->
-    window.goto = $(this).attr("href")
-    $('body').fadeOut 'fast', ->
-      document.location.href = window.goto
+    if $(this).attr("href") != "#"
+      window.goto = $(this).attr("href")
 
-    event.preventDefault()
+      $('body').fadeOut 'fast', ->
+        document.location.href = window.goto
+
+      event.preventDefault()
 
 
   if window.location.hostname.indexOf('github') > -1

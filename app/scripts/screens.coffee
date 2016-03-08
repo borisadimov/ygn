@@ -227,7 +227,7 @@ module.exports = class Screens
     console.log [index, state].join(',')
     switch [index, state].join(',')
       when '0,'
-        arrow.removeClass('reversed')
+        arrow.removeClass('reversed').removeClass('middle')
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.removeClass('reversed')
@@ -235,7 +235,7 @@ module.exports = class Screens
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
-        arrow.addClass('reversed')
+        arrow.addClass('reversed').removeClass('middle')
         if $(window).width() < 768
           $('.donate_link').hide()
 
@@ -243,21 +243,22 @@ module.exports = class Screens
         toggleMenu.addClass('reversed')
         donateLink.addClass('reversed')
         badge.removeClass('reversed')
-        arrow.addClass('reversed')
+        arrow.addClass('reversed').addClass('middle')
         if $(window).width() < 768
           $('.donate_link').hide()
+
       when '2,0'
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.addClass('reversed')
-        arrow.addClass('reversed')
+        arrow.addClass('reversed').removeClass('middle')
         if $(window).width() < 768
           $('.donate_link').hide()
       when '3,'
         donateLink.addClass('reversed')
         toggleMenu.addClass('reversed')
         badge.addClass('reversed')
-        arrow.addClass('reversed')
+        arrow.addClass('reversed').removeClass('middle')
         if $(window).width() < 768
           $('.donate_link').hide()
 
@@ -265,7 +266,7 @@ module.exports = class Screens
         donateLink.removeClass('reversed')
         toggleMenu.removeClass('reversed')
         badge.removeClass('reversed')
-        arrow.addClass('reversed')
+        arrow.addClass('reversed').removeClass('middle')
         if $(window).width() < 768
           $('.donate_link').show()
 

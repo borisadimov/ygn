@@ -10,6 +10,9 @@
     flex-flow: row wrap
     align-items: stretch
 
+    +mobile
+      flex-flow: column nowrap
+
     .support_type
       flex: 0 0 50%
 
@@ -25,6 +28,12 @@
       color: #fff
       cursor: pointer
       overflow: hidden
+      +mobile
+        font-size: 25px
+        line-height: 26px
+        letter-spacing: 2px
+        flex: 0 0 20%
+        flex: 0 0 20vh
 
 
 
@@ -67,6 +76,10 @@
     .transition
       flex: 0 0 100%
       background: #fff
+      +mobile
+        font-size: 25px
+        line-height: 26px
+        flex: 0 0 20vh
 
       .bg
         background: url(../images/transition.jpg) 50% 35% no-repeat
@@ -122,6 +135,13 @@
 
       @extend .content
 
+      +mobile
+        height: 100vh
+        flex: 0 1 100%
+        padding: 20px 30px 20px 30px
+        overflow-y: scroll
+        -webkit-overflow-scrolling: touch
+
 
       &.showed
         display: block
@@ -158,6 +178,10 @@
 
       .button
         margin: 25px 35px
+
+      .buttons .button
+        +mobile
+          margin: 15px auto
 
 
 

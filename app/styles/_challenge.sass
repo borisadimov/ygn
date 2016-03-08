@@ -69,6 +69,12 @@
         +tablet
           padding: 0 20px
 
+        +mobile
+          .title
+            font-size: 30px
+
+          .subtitle
+            font-size: 16px
 
         .text
           margin: 0
@@ -180,7 +186,7 @@
             font-size: 30px
             line-height: 30px
           +mobile
-            font-size: 18px
+            font-size: 17px
             line-height: 22px
             letter-spacing: initial
 
@@ -355,7 +361,7 @@
         .part
           display: none
           &.title_part
-            display: block
+            display: flex
 
         .points
           position: relative
@@ -376,7 +382,7 @@
             transition: max-height .5s ease
             will-change: max-height
             p
-              padding: 30px 30px 100px 30px
+              padding: 15px 30px 100px 30px
               min-height: 70vh
               font-size: 18px
               line-height: 22px
@@ -401,7 +407,7 @@
 
       &.state-1
         .next_arrow
-          transform: translate3d(-50%, -230%, 0)
+          transform: translate3d(-50%, -220%, 0)
           svg
             path,g
               stroke: #A1252B

@@ -125,7 +125,6 @@ module.exports = class Transition
     if phase is 0
       $('.phases .phase_1').addClass('active')
       $('.phase_content.phase_1').fadeIn('300')
-
       phase = 1
 
 
@@ -146,6 +145,7 @@ module.exports = class Transition
       if phase > 1
         phase--
         @setPhase(phase)
+        $('.transition').scrollTop(0)
 
     that = @
     $('.phase').click ->

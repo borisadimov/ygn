@@ -77,6 +77,16 @@ a.donate_link
     top: 15px
     right: 15px
 
+    &:after
+      content: ""
+      display: block
+      position: absolute
+      top: -4px
+      left: -4px
+      width: 28px
+      height: 30px
+
+
   +short
     top: 24px
 
@@ -148,6 +158,7 @@ a.donate_link
   height: 80px
   opacity: .7
   transition: opacity .3s ease
+  will-change: bottom
   cursor: pointer
   transition-delay: 1s
   +mobile
@@ -182,6 +193,9 @@ a.donate_link
   svg
     width: 100%
     height: 100%
+
+  &.middle
+    bottom: 50%
 
 .prev_arrow
   @extend .next_arrow
