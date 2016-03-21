@@ -129,6 +129,8 @@
 
 
 
+    .blog_scroll
+      height: 100%
 
     .blog_posts
       width: 30%
@@ -136,6 +138,8 @@
       margin-left: 20%
       margin-left: 20vw
       overflow: scroll
+      height: 100%
+      height: 100vh
 
       display: flex
       flex-flow: column nowrap
@@ -155,8 +159,10 @@
         overflow: hidden
         cursor: pointer
 
-        height: 50%
-        height: 50vh
+        width: 100%
+
+        height: 25%
+        height: 25vh
         font-weight: 800
 
         display: flex
@@ -195,12 +201,12 @@
           margin-bottom: 9px
 
         &_title
-          font-size: 26px
+          font-size: 24px
           display: inline
           border-bottom: 2px transparent solid
           color: #FEFEFE
           letter-spacing: 3.47px
-          line-height: 40px
+          line-height: 36px
           z-index: 2
           transition: border-bottom .3s ease
 
@@ -213,6 +219,8 @@
             border-bottom: 2px #A1252B solid
 
         &_text
+          display: none
+
           font-size: 18px
           color: #FEFEFE
           margin-top: 5px
@@ -240,6 +248,17 @@
       .jobsSof
         .bg
           background: url(../images/jobsSof.jpg) center center no-repeat
+          background-size: cover
+
+
+      .networking-tips
+        .bg
+          background: url(../images/NetworkingTips.jpg) center center no-repeat
+          background-size: cover
+
+      .reasons-entrepreneurs
+        .bg
+          background: url(../images/VetEntrepreneur_3508045b.jpg) center center no-repeat
           background-size: cover
 
     .blog_openedPost
