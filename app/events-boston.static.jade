@@ -1,0 +1,178 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  title YGN
+  meta(name="viewport" content="width=device-width")
+  meta(name="viewport" content="width=device-width, minimal-ui, initial-scale=1, maximum-scale=1, user-scalable=no")
+  link(rel="stylesheet" href="stylesheets/app.css")
+
+  script(src="javascripts/vendor.js")
+
+  script(src="javascripts/app.js")
+
+  script.
+    require('init');
+
+body.events-modal
+  include pages/menu
+
+  .events_title
+    .bg
+    .title EVENTS
+
+  .events-modalView.boston
+    .firstSection
+      .firstSection-left
+        .bg
+        .title BOSTON IS GRATEFUL
+
+      .firstSection-right
+        | One Day. Four Events. Robert J. O’Neill (former Navy SEAL Team 6) including the following events: 
+        | Lorem ipsum dolor sit amet, vero solet at his, mei libris omittam ei. Pro errem scripta deseruisse 
+        | te, mea no cetero iisque. Eu agam habemus vel, eum ex elit blandit. Alienum noluisse has in, id nec posse..
+
+    .secondSection
+      .secondSection-left
+        .title FRIDAY, MAY 13
+
+        .dates
+          .dates-item
+            .time
+              | 9AM
+            .event
+              | SEAL Workout
+
+          .dates-item
+            .time
+              | 11:30AM
+            .event
+              | Executive Briefing
+
+          .dates-item
+            .time
+              | 3PM
+            .event
+              | Take the Shot
+
+          .dates-item
+            .time
+              | 6:30PM
+            .event
+              | VIP Cocktail Hour
+
+          .dates-item
+            .time
+              | 7:15PM
+            .event
+              | Boston is Grateful
+
+      .secondSection-right
+        .title ATTEND
+        .button BUY TICKETS
+        a(href="#")
+
+    .thirdSection
+      .thirdSection-event.seal-workout
+        .bg
+        .title SEAL WORKOUT
+
+      .thirdSection-event.executive-briefing
+        .bg
+        .title EXECUTIVE BRIEFING
+
+      .thirdSection-event.take-the-shot
+        .bg
+        .title TAKE THE SHOT
+
+      .thirdSection-event.boston-is-grateful
+        .bg
+        .title BOSTON IS GRATEFUL
+
+.modal-container
+  .modal.seal-workout
+    .info
+      .cross
+      .title NAVY SEAL WORKOUT
+      .subtitle Financial Disctrict/Downtown Crossing
+      .time 8:30AM
+
+      .text Friday morning will feature a workout at Barry’s Bootcamp, in Boston
+
+      .text
+        | Think you can really get through boot camp? Take your
+        | workout to the next level as you’re joined by a group of
+        | Navy SEALs to add a little extra… motivation
+
+      .image
+        img(src="images/events/bootcamp.png")
+
+    .bottom
+      .title ATTEND
+      .button BUY TICKETS
+      a(href="#")
+
+  .modal.executive-briefing
+    .info
+      .cross
+      .title EXECUTIVE BRIEFING
+      .subtitle Financial Disctrict/Downtown Crossing
+      .time 8:30AM
+
+      .text Friday morning will feature a workout at Barry’s Bootcamp, in Boston
+
+      .text
+        | Think you can really get through boot camp? Take your
+        | workout to the next level as you’re joined by a group of
+        | Navy SEALs to add a little extra… motivation
+
+      .image
+        img(src="images/events/bootcamp.png")
+
+    .bottom
+      .title ATTEND
+      .button BUY TICKETS
+      a(href="#")
+
+  .modal.take-the-shot
+    .info
+      .cross
+      .title TAKE THE SHOT
+      .subtitle Financial Disctrict/Downtown Crossing
+      .time 8:30AM
+
+      .text Friday morning will feature a workout at Barry’s Bootcamp, in Boston
+
+      .text
+        | Think you can really get through boot camp? Take your
+        | workout to the next level as you’re joined by a group of
+        | Navy SEALs to add a little extra… motivation
+
+      .image
+        img(src="images/events/bootcamp.png")
+
+    .bottom
+      .title ATTEND
+      .button BUY TICKETS
+      a(href="#")
+
+  .modal.boston-is-grateful
+    .info
+      .cross
+      .title BOSTON IS GRATEFUL
+      .subtitle Financial Disctrict/Downtown Crossing
+      .time 8:30AM
+
+      .text Friday morning will feature a workout at Barry’s Bootcamp, in Boston
+
+      .text
+        | Think you can really get through boot camp? Take your
+        | workout to the next level as you’re joined by a group of
+        | Navy SEALs to add a little extra… motivation
+
+      .image
+        img(src="images/events/bootcamp.png")
+
+    .bottom
+      .title ATTEND
+      .button BUY TICKETS
+      a(href="#")
