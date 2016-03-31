@@ -61,6 +61,8 @@ ready ->
   if $('body').hasClass('supporter')
     window.supporter = new (require('scripts/supporter'))
 
+  if $('body').hasClass('events')
+    window.events = new (require('scripts/events'))
 
   if $('body').hasClass('challenge')
     window.challenge = new (require('scripts/challenge'))
