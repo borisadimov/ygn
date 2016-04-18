@@ -1619,6 +1619,17 @@ module.exports = Screens = (function() {
     toggleMenu = $('.toggle_menu');
     badge = $('.badge');
     video = $f($('.video_wrapper iframe')[0]);
+    video.addEvent('ready', function() {
+      video.addEvent('pause', function() {
+        return arrow.show();
+      });
+      video.addEvent('play', function() {
+        return arrow.hide();
+      });
+      return video.addEvent('finish', function() {
+        return arrow.show();
+      });
+    });
     screens = $('.screen');
     active = screens.first();
     this.index = 0;
@@ -1796,7 +1807,12 @@ module.exports = Screens = (function() {
         toggleMenu.addClass('reversed').hide();
         donateLink.addClass('reversed').hide();
         badge.removeClass('reversed').hide();
-        arrow.addClass('reversed').removeClass('middle').hide();
+        arrow.addClass('reversed').removeClass('middle');
+        video.api('paused', function(paused) {
+          if (!paused) {
+            return arrow.hide();
+          }
+        });
         return $('.donate_link').hide();
       case '2,0':
         toggleMenu.addClass('reversed').show();
