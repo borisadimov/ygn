@@ -12,6 +12,8 @@ module.exports = class Screens
   badge = null
   index: null
 
+  video = null
+
   length = 4
 
   states =
@@ -38,7 +40,7 @@ module.exports = class Screens
 
   init: =>
 
-    # $('.vide_wrapper').vide('videos/hero')
+
 
     container = document.querySelector('body')
     @createScrollListener(container, @onScroll)
@@ -49,6 +51,8 @@ module.exports = class Screens
     donateLink = $('.donate_link')
     toggleMenu = $('.toggle_menu')
     badge = $('.badge')
+
+    video = $f($('.video_wrapper iframe')[0])
 
 
     screens = $('.screen')
@@ -215,8 +219,7 @@ module.exports = class Screens
     # @hideVideoControls()
 
   stopVideo: =>
-    # video.pause()
-    # @showVideoControls()
+    video.api('pause')
 
   toggleVideo: =>
     # if video.paused
