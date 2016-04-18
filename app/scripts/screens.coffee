@@ -54,6 +54,14 @@ module.exports = class Screens
 
     video = $f($('.video_wrapper iframe')[0])
 
+    video.addEvent 'ready', ->
+
+
+      video.addEvent 'pause', -> arrow.show()
+      video.addEvent 'play', -> arrow.hide()
+      video.addEvent 'finish', -> arrow.show()
+
+
 
     screens = $('.screen')
     active = screens.first()
@@ -240,7 +248,11 @@ module.exports = class Screens
         toggleMenu.addClass('reversed').hide()
         donateLink.addClass('reversed').hide()
         badge.removeClass('reversed').hide()
-        arrow.addClass('reversed').removeClass('middle').hide()
+        arrow.addClass('reversed').removeClass('middle')
+        video.api 'paused', (paused) ->
+          unless paused
+            arrow.hide()
+
         $('.donate_link').hide()
 
       when '2,0'
