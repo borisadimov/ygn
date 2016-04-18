@@ -13,15 +13,16 @@ exports.config =
       joinTo: 'javascripts/app.js' # : /.+\.jade$/
 
   plugins:
+
     jade:
       pretty: yes # Adds pretty-indentation whitespaces to output (false by default)
 
       # locals:
       #   github: false
 
-    # static_jade:                        # all optionals
-    #   extension:  ".static.jade"        # static-compile each file with this extension in `assets`
-    #   asset:      "app/assets"     # specify the compilation output
+    static_jade:                        # all optionals
+      extension:  ".static.jade"        # static-compile each file with this extension in `assets`
+      asset:      "app/assets"     # specify the compilation output
 
     postcss:
       processors: [
