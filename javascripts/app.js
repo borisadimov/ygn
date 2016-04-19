@@ -1560,7 +1560,7 @@ module.exports = Screens = (function() {
 
   video = null;
 
-  length = 4;
+  length = 5;
 
   states = {
     '0': [],
