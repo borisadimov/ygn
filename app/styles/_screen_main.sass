@@ -48,8 +48,9 @@
     opacity: 0.001
     transform: translate3d(0, 20px, 0)
     text-align: center
-    height: 260px
-    margin-bottom: 60px
+    height: 230px
+    margin-bottom: 20px
+    margin-top: 40px
     transition: all 350ms ease-in-out 750ms
 
     max-width: 100%
@@ -103,11 +104,52 @@
     line-height: 36px
     text-align: center
     transition: all 350ms ease-in-out 650ms
+    margin-bottom: 20px
 
     .scrolled &.appeared
       opacity: 0.001
       transform: translate3d(0, -20px, 0)
       transition-delay: 80ms
+
+
+  .brand_video
+    position: relative
+    z-index: 1
+    opacity: 0.001
+    transform: translate3d(0, 20px, 0)
+    background: url(../images/poster_small.jpg) center center no-repeat
+    background-size: cover
+    display: block
+    width: 230px
+    height: 8.125rem
+    border: 1px solid #fff
+    margin: 0 auto
+    overflow: hidden
+    cursor: pointer
+
+    line-height: 130px
+    letter-spacing: 0.15em
+    text-align: center
+    vertical-align: center
+    transition: all 350ms ease-in-out 650ms
+    &:before
+      content: "▶"
+      font-size: 1.3rem
+      margin-right: 5px
+      position: relative
+      top: 3px
+      left: -5px
+
+    .visible &.appeared
+      opacity: .999
+      transform: translate3d(0, 0, 0)
+
+    .scrolled &.appeared
+      opacity: 0.001
+      transform: translate3d(0, -20px, 0)
+      transition-delay: 80ms
+
+
 
   .vide_wrapper
     background-image: url(../images/main_bg.jpg)
@@ -121,3 +163,69 @@
     z-index: 0
     +mobile
       background-position: 70% 50%
+
+.index
+  .overlay
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    justify-content: center
+    align-items: center
+    z-index: 550
+    flex-flow: row nowrap
+    display: none
+    background: rgba(0,0,0,0.6)
+    &.showed
+      display: flex
+
+    .close
+      margin: 10px auto
+      cursor: pointer
+      width: 29px
+      height: 32px
+      left: 50%
+      top: 2vh
+      margin-left: -14.5px
+
+      position: absolute
+
+      svg
+        width: 100%
+        height: 100%
+        fill: #fff
+        stroke: #fff
+        path
+          fill: #fff
+          stroke: #fff
+
+
+    .popup
+      background: #fff
+      display: none
+      flex: 0 1 80%
+      max-width: 1000px
+      height: 80vh
+
+      background: #FEFEFE
+      box-shadow: 0px 12px 12px 0px rgba(0,0,0,0.25), 0px 15px 38px 0px rgba(0,0,0,0.30)
+      opacity: 0.001
+      transition: opacity .4s ease
+      will-change: opacity
+
+      +mobile
+        height: 100vh
+        flex: 0 1 100%
+        padding: 20px 30px 20px 30px
+        overflow-y: scroll
+        -webkit-overflow-scrolling: touch
+
+
+      &.showed
+        display: block
+
+      &.visible
+        opacity: .999
+
+

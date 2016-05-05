@@ -49,7 +49,7 @@ ready ->
     $('head').prepend('<base href="http://citytocoast.com/ygn/" />')
 
   runNext 100, ->
-    $('.main_slide .logo, .main_slide .subtitle').addClass('appeared')
+    $('.main_slide .logo, .main_slide .subtitle, .main_slide .brand_video').addClass('appeared')
 
 
   $('.toggle_menu').click toggleMenu

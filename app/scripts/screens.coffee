@@ -18,11 +18,10 @@ module.exports = class Screens
 
   states =
     '0': []
-    '1': []
-    '2': ['state-1','state-2']
-    '3': ['state-1']
+    '1': ['state-1','state-2']
+    '2': ['state-1']
+    '3': []
     '4': []
-    '5': []
 
   currentState = null
   started = false
@@ -35,6 +34,8 @@ module.exports = class Screens
     @handleTouchMove = _.debounce @_handleTouchMove, 100
 
     @addTouchHandler()
+
+
 
 
 
@@ -69,9 +70,24 @@ module.exports = class Screens
 
     @setHandlers()
 
-    # screens.each (i,e) =>
-    #   if !!states[i]
-    #     $(e).addClass(states[i][0])
+
+  showVideoPopup: ->
+    className = 'video_popup'
+    $('.overlay').addClass('showed')
+    $(".overlay .#{className}").addClass('showed')
+    $('.social_icons').fadeOut()
+    runNext 10, =>
+      $(".overlay .#{className}").addClass('visible')
+
+
+  hideVideoPopup: ->
+    $('.overlay').removeClass('showed')
+    $('.overlay .popup').removeClass('showed visible')
+    $('.social_icons').fadeIn()
+
+
+
+
 
   createScrollListener: (elem, handler) =>
     if elem.addEventListener
@@ -189,10 +205,6 @@ module.exports = class Screens
 
   afterScroll: (direction) =>
 
-    # if direction is 'next' && @index != 0
-    #   if !!$('.vide_wrapper').data('vide')
-    #     $('.vide_wrapper').data('vide').destroy()
-
     @highlightMenu(@index, currentState)
 
 
@@ -201,13 +213,8 @@ module.exports = class Screens
   beforeScroll: (direction) =>
 
     $('.content').removeClass('expanded')
-
-    # if !!$('.vide_wrapper video')[0]
-    #   $('.vide_wrapper video')[0].pause()
+    @hideVideoPopup()
     @stopVideo()
-
-    # if direction is 'prev' && @index is 1 && currentState is 0
-    #   $('.vide_wrapper').vide('videos/hero')
 
     if direction is 'next' && @index+1 == length-1
       arrow.addClass('hidden')
@@ -244,18 +251,8 @@ module.exports = class Screens
         toggleMenu.removeClass('reversed').show()
         badge.removeClass('reversed').show()
 
-      when '1,'
-        toggleMenu.addClass('reversed').hide()
-        donateLink.addClass('reversed').hide()
-        badge.removeClass('reversed').hide()
-        arrow.addClass('reversed').removeClass('middle')
-        video.api 'paused', (paused) ->
-          unless paused
-            arrow.hide()
 
-        $('.donate_link').hide()
-
-      when '2,0'
+      when '1,0'
         toggleMenu.addClass('reversed').show()
         donateLink.addClass('reversed').show()
         badge.removeClass('reversed').show()
@@ -265,7 +262,7 @@ module.exports = class Screens
         else
           $('.donate_link').show()
 
-      when '2,1'
+      when '1,1'
         toggleMenu.addClass('reversed').show()
         donateLink.addClass('reversed').show()
         badge.removeClass('reversed').show()
@@ -275,7 +272,7 @@ module.exports = class Screens
         else
           $('.donate_link').show()
 
-      when '3,0'
+      when '2,0'
         donateLink.removeClass('reversed').show()
         toggleMenu.removeClass('reversed').show()
         badge.addClass('reversed').show()
@@ -284,11 +281,12 @@ module.exports = class Screens
           $('.donate_link').hide()
         else
           $('.donate_link').show()
-      when '4,'
+
+      when '3,'
         donateLink.addClass('reversed').show()
         toggleMenu.addClass('reversed').show()
         badge.addClass('reversed').show()
-        arrow.addClass('reversed').removeClass('middle').show()
+        arrow.addClass('reversed').removeClass('middle').hide()
         if $(window).width() < 768
           $('.donate_link').hide()
         else
@@ -310,6 +308,14 @@ module.exports = class Screens
 
 
   setHandlers: =>
+
+    $('.brand_video').click =>
+      @showVideoPopup()
+
+    $('.overlay .close').click =>
+      @hideVideoPopup()
+      @stopVideo()
+
     arrow.click =>
       unless @scrollDisabled
         @scrollDisabled = true
